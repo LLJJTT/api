@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="author" content="why, why.0505@163.com"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/demo_css.css" />
+    
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+</head>
+<style>
+
+</style>
+<body>
+<section class="g-flexview">
+
+    <header class="m-navbar">
+        <a href="javascript:history.go(-1)" class="navbar-item"><i class="back-ico"></i></a>
+        <div class="navbar-center"><span class="navbar-title">行业</span></div>
+    </header>
+
+    <section class="g-scrollview">
+
+        <div class="w-class">
+            <div class="w-class-l">
+                <a href="w-right.html" class="scrolltab-item crt" target="w-right"><div class="scrolltab-title">男装</div></a>
+                <a href="index.html" class="scrolltab-item" target="w-right"><div class="scrolltab-title">女装</div></a>
+                <a href="index.html" class="scrolltab-item" target="w-right"><div class="scrolltab-title">内衣配饰</div></a>
+                <a href="index.html" class="scrolltab-item" target="w-right"><div class="scrolltab-title">箱包手袋</div></a>
+                <a href="index.html" class="scrolltab-item" target="w-right"><div class="scrolltab-title">美妆护肤</div></a>
+                <a href="index.html" class="scrolltab-item" target="w-right"><div class="scrolltab-title">钟表珠宝</div></a>
+                <a href="index.html" class="scrolltab-item" target="w-right"><div class="scrolltab-title">手机数码</div></a>
+                <a href="index.html" class="scrolltab-item" target="w-right"><div class="scrolltab-title">电脑办公</div></a>
+                <a href="index.html" class="scrolltab-item" target="w-right"><div class="scrolltab-title">家用电器</div></a>
+                <a href="index.html" class="scrolltab-item" target="w-right"><div class="scrolltab-title">食品生鲜</div></a>
+                <a href="index.html" class="scrolltab-item" target="w-right"><div class="scrolltab-title">化工行业</div></a>
+                <a href="index.html" class="scrolltab-item" target="w-right"><div class="scrolltab-title">箱包手袋</div></a>
+                <a href="index.html" class="scrolltab-item" target="w-right"><div class="scrolltab-title">美妆护肤</div></a>
+                <a href="index.html" class="scrolltab-item" target="w-right"><div class="scrolltab-title">钟表珠宝</div></a>
+                <a href="index.html" class="scrolltab-item" target="w-right"><div class="scrolltab-title">手机数码</div></a>
+            </div>
+            <iframe class="w-class-r" frameborder="0" name="w-right" src="w-right.html"></iframe>
+            
+               
+            </div>
+        </div>
+
+    </section>
+
+</section>
+<script src="js/ydui.js"></script>
+<script>
+$(function(){
+    $(".w-class-l .scrolltab-item").click(function() {
+        $(this).siblings('.scrolltab-item').removeClass('crt');  // 删除其他兄弟元素的样式
+        $(this).addClass('crt');                            // 添加当前元素的样式
+    });
+}); 
+</script>
+</body>
+</html>

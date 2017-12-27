@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="author" content="why, why.0505@163.com"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/demo_css.css" />
+    
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+	</head>
+	<body>
+		<header class="m-navbar navbar-fixed">
+			<a href="javascript:history.go(-1)" class="navbar-item"><i class="back-ico"></i></a>
+	    	<div class="navbar-center"><span class="navbar-title">进度详情</span></div>
+	    	<div class="navbar-item padd_10">
+	        	<img src="images/....png" width="20" id="btnShow" />
+		    	<div class="net_on">
+					<a href="javascript:;"><i class="i-news"></i>消息</a>
+					<a href="shop.html"><i class="i-home"></i>商城首页</a>
+					<a href="javascript:;"><i class="i-fk"></i>我要反馈</a>
+					<a href="javascript:;"><i class="i_fx"></i>我要分享</a>
+				</div>
+		    </div>
+	 </header>
+	 <div class="g-scrollview" style="padding: 0.9rem 0 0rem;">
+	 	<div class="main bg_fff main-10 padd_20">
+	 		<p class="main al_l l_hei30 padd_e10 p_size16">售后进度</p>
+	 		<img src="images/daishouhuo_shangjia.png" style="width: 320px; display: inline-block;" />
+	 		<p class="main al_l padd_e10 hui">您已成功发货给商家，请等待商家确认收货</p>
+	 	</div>
+	 	<div class="main bg_fff main-10 padd_20">
+	 		<div class="main al_l l_hei30 padd_e10 p_size16">注意事项</div>
+	 		<div class="main al_l padd_e5 hui">
+	 			<P class="padd_e5">1.商家收货后，会处理你的订单</P>
+	 			<P class="padd_e5">2.如果商家拒绝,您可以修改退款申请后再次发起,商家会重新处理</P>
+			</div>
+	 	</div>
+	 	
+	 	<div class="main main-10">
+				<div class="main m-cell bor-n">
+					<div class="cell-item bor-n">
+					     <div class="cell-left p_size16 padd_10">退款信息</div>
+					    <div class="cell-right"></div>
+					</div>
+				</div>
+				<ul class="main list_02">
+							<li>
+								<div class="img m-list"><img src="images/none_w.jpg" data-url="images/mig.png"></div>
+								<div class="today_text">
+									<div class="main"><h2>皮尔卡丹正品皮带男士商务自动扣真皮正装腰带休闲</h2></div>
+									<p class="main main-5"><font class="hui p_s_2rem">规格: 黑色</font><font class="hui float_r">×2</font></p>
+								</div>	
+								
+							</li>
+						</ul>
+			</div>
+	 	
+	 	
+	 		<div class="main main-10 bg_fff l_hei4 al_l padd_a hui p_s_2rem">
+				<p>退款原因:<font class="padd_10">颜色/尺寸/参数不符</font></p>
+				<p>退款金额:<font class="padd_10">￥2546.00</font></p>
+				<p>申请时间:<font class="padd_10">2017-10-07 14:08:26</font></p>
+				<p>退款编号:<font class="padd_10">3891046081972684</font></p>
+			</div>
+	 		<div class="main m-cell bor-n main-10">
+				<div class="cell-item">
+			        <div class="cell-left"></div>
+			        <div class="cell-right"><div class="main al_c"><font class="padd_20"><a class="btn btn-hollow hui" style="width: 110px;"><i class="kefu"></i>&nbsp;&nbsp;联系卖家</a></font><font class="padd_20"><a class="btn btn-hollow hui" href="tel:00000000" style="width: 110px;"><i class="icon-phone2 p_s_4rem"></i>&nbsp;&nbsp;拨打电话</a></font></div></div>
+			   </div>
+			</div>
+	 </div>
+	 <script src="js/ydui.js"></script>
+	 <script>
+   $(function () {  
+     $('#btnShow').click(function (event) {  
+         //取消事件冒泡  
+         event.stopPropagation();  
+         //按钮的toggle,如果div是可见的,点击按钮切换为隐藏的;如果是隐藏的,切换为可见的。  
+         $('.net_on').toggle();  
+		 return false;
+     });  
+     //点击空白处隐藏弹出层，下面为滑动消失效果和淡出消失效果。
+	 $(document).click(function(event){
+		  var _con = $('.net_on');   // 设置目标区域
+		  if(!_con.is(event.target) && _con.has(event.target).length === 0){ // Mark 1
+			//$('#divTop').slideUp('slow');   //滑动消失
+			$('.net_on').hide();          //淡出消失
+		  }
+	});
+	
+}); 
+    !function () {
+        $('.m-list').find('img').lazyLoad({binder: '.g-scrollview'});
+    }();
+    !function (win, $) {
+        var dialog = win.YDUI.dialog;
+        /* 正确提示框 */
+        $('#J_ToastS').on('click', function () {
+            dialog.toast('申请成功！', 'success', 1000);
+            setTimeout('window.location = "refund_viw1.html"', 1000);
+
+        });
+    }(window, jQuery);   
+</script>
+	</body>
+</html>

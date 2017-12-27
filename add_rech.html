@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/demo.css"/>
+    <link rel="stylesheet" href="css/jquery-labelauty.css">
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/demo_css.css" />
+	</head>
+	<body>
+		<header class="m-navbar navbar-fixed">
+			<a href="javascript:history.go(-1)" class="navbar-item"><i class="back-ico"></i></a>
+	    	<div class="navbar-center"><span class="navbar-title">添加加油卡</span></div>
+	 </header>
+		<div class="content">
+			<div class="mian padd_e10">
+				<p class="l_hei30 al_l p_size16 padd_10"><b>油卡类型</b></p>
+			</div>
+			<div class="main bg_fff shadow2">
+				<ul class="user_ul">
+					<li class="padd_e10"><label><span class="float_l padd_10"><input type="radio" class="ki" name="psfs" data-labelauty=" " checked></span><p class="padd_10 p_size15 l_hei30 al_l">中国石油</p> </label>
+					</li>
+					<li class="border-t padd_e10"><label><span class="float_l padd_10"><input type="radio" class="ki" name="psfs" data-labelauty=" "></span><p class="padd_10 p_size15 l_hei30 al_l">中国石化</p></label></li>
+				</ul>
+			</div>
+			<div class="main padd_10">
+				<p class="hui padd_e10 al_l p_size12">不支持中石油BP卡、司机卡、过期卡、不记名卡以及非直营加油站办理的加油卡</p>
+			</div>
+			
+
+			<div class="main m-cell">
+			    <div class="cell-item">
+			        <div class="cell-left">油卡卡号：</div>
+			        <div class="cell-right"><input type="number" pattern="[0-9]*" class="cell-input" placeholder="输入油卡卡号" autocomplete="off" /></div>
+			    </div>
+			    <div class="cell-item">
+			        <div class="cell-left">油卡卡号：</div>
+			        <div class="cell-right"><input type="number" pattern="[0-9]*" class="cell-input" placeholder="再次输入油卡卡号" autocomplete="off" /></div>
+			    </div>
+			</div>
+
+			<div class="main padd_10">
+				<p class="hui padd_e10 al_l p_size12">请认真核实油卡卡号，以免充值到他人油卡造成损失</p>
+			</div>
+
+			<div class="main m-cell">
+			    <div class="cell-item">
+			        <div class="cell-left">持卡人：</div>
+			        <div class="cell-right"><input type="text" class="cell-input" placeholder="持卡人姓名" autocomplete="off" /></div>
+			    </div>
+			    <div class="cell-item">
+			        <div class="cell-left">手机号：</div>
+			        <div class="cell-right"><input type="number" pattern="[0-9]*" class="cell-input" placeholder="手机号码" autocomplete="off" /></div>
+			    </div>
+			</div>
+			<div class="main padd_10">
+				<p class="hui padd_e10 al_l"><label><input type="checkbox" checked="" style="width: 18px; height: 18px; vertical-align: middle;" /> 我同意<a href="#" class="lan">《服务协议》</a></label></p>
+			</div>
+			<div class="main main-30 padd_10"><button type="button" onclick="javascript:window.location.href='#'" class="btn-block btn-warning" >提交</button><!--禁止点击类名int_c02  属性readonly--></div>
+		</div>
+		<script src="js/jquery-labelauty.js"></script>
+		<script>
+		$(function(){
+			$('.ki:input').labelauty();
+		});
+		</script>
+	</body>
+</html>

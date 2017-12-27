@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="author" content="why, why.0505@163.com"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="js/touchTouch/touchTouch.css">
+    <link rel="stylesheet" href="css/demo_css.css" />
+    
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/touchTouch/touchTouch.jquery.js"></script>
+		<script>
+		$(function(){
+			$('.thumbs a').touchTouch();
+		});
+		</script> 
+	</head>
+	<body>
+		<header class="m-navbar navbar-fixed">
+	        <a href="javascript:history.go(-1)" class="navbar-item"><i class="back-ico"></i></a>
+	        <div class="navbar-center" style="margin-left: 15%; width: 80%;"><div class="seach_v al_l"><i class="icon-search"></i>输入您当前要搜索的商品</div></div>
+	        <div class="navbar-item padd_10">
+	        	<a class="main-5" style="margin-right: 20px; line-height:10px;" href="street.html" ><i class="icon-type p_s_4rem"></i><br><font class="p_size10">分类</font></a>
+	        	<img src="images/....png" width="20"  id="btnShow" />
+		    	<div class="net_on">
+					<a href="javascript:;"><i class="i-news"></i>消息</a>
+					<a href="shop.html"><i class="i-home"></i>商城首页</a>
+					<a href="javascript:;"><i class="i-fk"></i>我要反馈</a>
+					<a href="javascript:;"><i class="i_fx"></i>我要分享</a>
+				</div>
+		    </div>
+	    </header>
+	    <div class="main" style="padding: 0 0 1rem 0;" id="sh-img">
+		    <div class="swiper-container shop_bus">
+		        <div class="swiper-wrapper thumbs">
+		            <a class="swiper-slide" href="images/bute/pro15.jpg" style="background-image:url(images/bute/pro15.jpg)" title="图片一"></a>
+		            <a class="swiper-slide" href="images/bute/pro16.jpg" style="background-image:url(images/bute/pro16.jpg)" title="图片二"></a>
+		            <a class="swiper-slide" href="images/bute/pro17.jpg" style="background-image:url(images/bute/pro17.jpg)" title="图片一"></a>
+		        </div>
+		        <!-- Add Pagination -->
+		        <div class="swiper-pagination none"></div>
+		        <div class="main padd_10 shop-text shop_bus1">
+				<div class="logo-img m-list"><img src="images/none.jpg" data-url="images/main_05.jpg"/></div>
+				<div class="title"><p><b class="p_s_3rem">ONLY官方旗舰店</b></p><p>做最美的自己,就选swisse</p></div>
+				<span class="float_r"><a href="javascript:;" class="gz"><i></i>关注</a><p class="p_size12 main-5 al_r">1.6万粉丝</p></span>
+			</div>
+		    </div>
+    
+    
+	
+		 	<div class="main shop_bus2" id="mynav">
+	            <ul class="tab-nav ">
+	                <li class="tab-nav-item"><a href="shop_bus.html">店铺首页</a></li>
+	                <li class="tab-nav-item"><a href="shop_list.html">全部商品</a></li>
+	                <li class="tab-nav-item tab-active"><a href="shop_news.html">店铺动态</a></li>
+	            </ul>
+	        </div>
+		 	<div class="main bg_fff l_hei30 hui">"下面是我店的动态，欢迎查看！"</div>		
+		</div>
+		<footer class="m-tabbar tabbar-fixed shop-bot">
+	<div class="main m-grids-3 shop_gr3 main-5">
+		<a href="shop_viw.html" class="grids-item px">
+			<div class="grids-txt"><span>店铺详情</span></div>
+		</a>
+		<a href="#" class="grids-item px">
+			<div class="grids-txt"><span>全部分类</span></div>
+		</a>
+		<a href="#" class="grids-item px">
+			<div class="grids-txt"><span>带我去店铺</span></div>
+		</a>
+	</div>
+</footer>
+<a href="javascript:;" class="go"><img src="images/hui_dingbu.png"><br>顶部</a>
+<script src="js/ydui.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/nav.js"></script>
+<script>
+	 var swiper = new Swiper('.shop_bus', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+	$(function(){
+			$('.g-scrollview').scroll(function(){
+		          height = $('.g-scrollview').scrollTop();
+		   	  	  if(height > 150){
+		   	  	  	$('.go').fadeIn(1000);
+		   	  	  }else{
+		   	  	  	$('.go').fadeOut(300);
+		   	  	  }
+		    });
+		});
+		$('.go').on('click',function(){
+			$('.g-scrollview').animate({'scrollTop':0},1000);
+		});
+	$(function () {  
+	     $('#btnShow').click(function (event) {  
+	         //取消事件冒泡  
+	         event.stopPropagation();  
+	         //按钮的toggle,如果div是可见的,点击按钮切换为隐藏的;如果是隐藏的,切换为可见的。  
+	         $('.net_on').toggle();  
+			 return false;
+	     });  
+	     //点击空白处隐藏弹出层，下面为滑动消失效果和淡出消失效果。
+		 $(document).click(function(event){
+			  var _con = $('.net_on');   // 设置目标区域
+			  if(!_con.is(event.target) && _con.has(event.target).length === 0){ // Mark 1
+				//$('#divTop').slideUp('slow');   //滑动消失
+				$('.net_on').hide();          //淡出消失
+			  }
+		});
+		
+	 });  
+	!function () {
+        $('.m-list').find('img').lazyLoad({binder: '#sh-img'});
+    }();
+
+</script>
+      <script type="text/javascript" src="js/1navfix.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(e) {
+
+ $('#mynav').navfix(43,99);    
+$('#shop-h').navfix(78,99); 
+});
+
+//第一个值： 你期望导航在距离顶部多少的位置浮动
+
+//第二个值： 导航zindex
+
+</script>
+
+
+	</body>
+</html>

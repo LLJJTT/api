@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/demo.css"/>
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/demo_css.css" />
+	</head>
+	<body>
+		<div class="mian">
+			<div class="main uesr_t">
+				<a href="notice.html" class="ico_notice"><i class="fa fa-bell p_size18"></i><span class="number"></span></a>
+				<a href="uesr_viw.html"><div class="uesr_logo main-30"><img src="images/main_01.jpg"></div></a>
+				<div class="uesr_name"><font class="p_size20">130****1234</font></div>
+				<div class="uesr_name"><p>私家车司机</p></div>
+			</div> 
+			<div class="main" style="padding: 0px 0px 60px;">
+				<ul class="list_01 main-10 shadow2">
+					<li class="border-b"><a href="javascript:;" id="J_ConfirmCustom"><i class="fa fa-qrcode hui"></i>邀请朋友<font class="float_r hui p_size14"><i class="fa fa-angle-right"></i></font></a></li>
+				</ul>
+				<ul class="list_01 main-10 shadow2">
+					<li class="border-b"><a href="assets.html"><i class="ico_01_i i_zc"></i>资产管理<font class="float_r hui p_size14"><i class="fa fa-angle-right"></i></font></a></li>
+					<li><a href="sub.html"><i class="ico_01_i i_xs"></i>下属管理<font class="float_r hui p_size14"><i class="fa fa-angle-right"></i></font></a></li>
+				</ul>
+				<ul class="list_01 main-10 shadow2">
+					<li class="border-b"><a href="repayment.html"><i class="ico_01_i i_jy"></i>我要还款<font class="float_r hui p_size14"><i class="fa fa-angle-right"></i></font></a></li>
+				</ul>
+				<ul class="list_01 main-10 shadow2">
+					<li class="border-b"><a href="rech_g.html"><i class="ico_01_i i_jy"></i>加油卡管理<font class="float_r hui p_size14"><i class="fa fa-angle-right"></i></font></a></li>
+					<li><a href="bank_g.html"><i class="ico_01_i i_yh"></i>银行卡管理<font class="float_r hui p_size14"><i class="fa fa-angle-right"></i></font></a></li>
+				</ul>
+				<ul class="list_01 main-10 shadow2">
+					<li><a href="#"><i class="ico_01_i i_yhq"></i>我的优惠券<font class="float_r hui p_size14">0张<i class="fa fa-angle-right"></i></font></a></li>
+				</ul>
+				<ul class="list_01 main-10 shadow2">
+					<li class="border-b"><a href="licai.html"><i class="ico_01_i i_lczx"></i>理财中心<font class="float_r hui p_size14"><i class="fa fa-angle-right"></i></font></a></li>
+					<li><a href="#"><i class="ico_01_i i_fwzx"></i>服务中心<font class="float_r hui p_size14"><i class="fa fa-angle-right"></i></font></a></li>
+				</ul>
+				<ul class="list_01 main-10 shadow2">
+					<li><a href="sz.html"><i class="ico_01_i i_sz"></i>设置<font class="float_r hui p_size14"><i class="fa fa-angle-right"></i></font></a></li>
+				</ul>
+			</div>
+		</div>
+		<footer class="m-tabbar tabbar-fixed">
+            <a href="index.html" class="tabbar-item tabbar-active">
+                <span class="tabbar-icon">
+                    <i class="demo-icons-ayy"></i>
+                </span>
+                <span class="tabbar-txt">爱油游</span>
+            </a>
+            <a href="#" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <i class="demo-icons-shop"></i>
+                </span>
+                <span class="tabbar-txt">商   城</span>
+            </a>
+            <a href="#" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <i class="demo-icons-news"></i>
+                </span>
+                <span class="tabbar-txt">资  讯</span>
+            </a>
+            <a href="#" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <i class="demo-icons-yj"></i>
+                </span>
+                <span class="tabbar-txt">业  绩</span>
+            </a>
+            <a href="login.html" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <i class="demo-icons-uesr"></i>
+                    <span class="tabbar-dot"></span>
+                   <!-- <span class="badge badge-danger">2</span>-->
+                </span>
+                <div class="tabbar-txt" >我  的</div>
+            </a>
+        </footer>
+        <script src="js/ydui.js"></script>
+        <script>
+    !function (win, $) {
+        var dialog = win.YDUI.dialog;
+        /* 普通确认框 */
+         $('#J_ConfirmCustom').on('click', function () {
+            dialog.confirm('想邀请其他人来获得“收益”吗？', '<p class="al_c padd_a"><i class="fa fa-exclamation-triangle hong" style="font-size: 1.5rem;"></i></p>您现在的账号<font class="hong">没有</font>邀请他人的<font class="hong">权限</font>哦！请<font class="hong">联系</font>邀请您进入“爱油游”的<font class="hong">代理</font>，进行咨询！', [
+                
+                {
+                    txt: '我要升级！',
+                    color: true,
+                    callback: function () {
+                    	window.location='agent.html';
+                    }
+                }
+            ]);
+        });
+
+    }(window, jQuery);
+</script>
+	</body>
+</html>

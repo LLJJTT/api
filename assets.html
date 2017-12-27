@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/demo.css"/>
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/demo_css.css" />
+	</head>
+	<body>
+		<header class="m-navbar navbar-fixed">
+			<a href="javascript:history.go(-1)" class="navbar-item"><i class="back-ico"></i></a>
+	    	<div class="navbar-center"><span class="navbar-title">资产管理</span></div>
+	    	<a href="" class="navbar-item"><i class="icon-question padd_10 p_size24"></i></a>
+	  </header>
+			<div class="content">
+				<div class="main" style="height: 110px; background: #fac035;">
+					<p class="main-20 bai">花有总资产(元)</p>
+					<p class="main-10 bai p_size34">15,000.00</p>
+				</div>
+				<div class="main" style="background: #ffb814;">
+					<ul class="cen_list_02" style="padding: 0px;">
+		            	<li style="border: none; padding: 10px 0px;"><p class="hong p_size12">当前剩余加油资产(元)</p><p class="bai p_size24 l_hei30"><b>800.00</b></p><p class="bai p_size12">加油总资产1000(元)</p></li>
+		            	<li style="border: none; padding: 10px 0px;"><p class="hong p_size12">剩余花有资产(元)</p><p class="bai p_size24 l_hei30"><b>1000.00</b></p><p class="bai p_size12">花有总资产1000(元)</p></li>
+		            </ul>
+				</div>
+				
+				<div class="main al_l padd_a"><b class="hui">本月</b><span class="float_r"><i class="fa fa-filter"></i><font id="demo1">筛选</font></span></div>
+				<div class="main bg_fff" >
+					<ul class="recd_list_02">
+						<li>
+							<p><font>中国石油</font><font class="float_r">-300元</font></p>
+							<p><span class="p_size12 hui">8月20日 14：01</span><font class="float_r p_size12 hui">交易成功</font></p>
+						</li>
+						<li>
+							<p><font>中国石化</font><font class="float_r">-300元</font></p>
+							<p><span class="p_size12 hui">8月20日 14：01</span><font class="float_r p_size12 hui">交易成功</font></p>
+						</li>
+					</ul>
+				</div>
+				<div class="main al_l padd_a"><b class="main hui">7月</b></div>
+				<div class="main bg_fff" >
+					<ul class="recd_list_02">
+						<li>
+							<p><font>中国石油</font><font class="float_r">-300元</font></p>
+							<p><span class="p_size12 hui">8月20日 14：01</span><font class="float_r p_size12 hui">交易成功</font></p>
+						</li>
+						<li>
+							<p><font>中国石化</font><font class="float_r">-300元</font></p>
+							<p><span class="p_size12 hui">8月20日 14：01</span><font class="float_r p_size12 hui">交易成功</font></p>
+						</li>
+					</ul>
+				</div>
+				<div class="main main-60">您当前没有加油记录</div>
+				
+			</div>
+			<script src="js/datePicker.js"></script>
+	    <script>
+	    	var calendar = new datePicker();
+				calendar.init({
+					'trigger': '#demo1', /*按钮选择器，用于触发弹出插件*/
+					'type': 'date',/*模式：date日期；datetime日期时间；time时间；ym年月；*/
+					'minDate':'1900-1-1',/*最小日期*/
+					'maxDate':'2100-12-31',/*最大日期*/
+					'onSubmit':function(){/*确认时触发事件*/
+						var theSelectData=calendar.value;
+					},
+					'onClose':function(){/*取消时触发事件*/
+					}
+				});
+	    </script>
+	</body>
+</html>

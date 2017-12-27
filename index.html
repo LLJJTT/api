@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/demo.css"/>
+    <link rel="stylesheet" href="css/demo_css.css" />
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+<script src="js/jquery.leoweather.min.js"></script>
+</head>
+<body>
+<style>
+	.weather{position: absolute; width: 100%; margin-top: -50px; height: 50px; z-index: 999; overflow:hidden; }
+	#demo { position: relative; display: inline-block; width:50%;color:#FFF; height: 50px; padding: 7px 10px;}
+	#demo i { background: no-repeat center left; display:inline-block; height:40px; line-height:40px; margin:0 auto; font-size:14px; padding-left:50px; font-style:normal; text-align:center;background-size: auto 30px; }
+	#demo i.icon-xiaoyu { background-image:url(images/icon/xiaoyu.png); }
+	#demo i.icon-zhongyu { background-image:url(images/icon/zhongyu.png); }
+	#demo i.icon-dayu { background-image:url(images/icon/dayu.png); }
+	#demo i.icon-qing { background-image:url(images/icon/qing.png); }
+	#demo i.icon-duoyun { background-image:url(images/icon/duoyun.png); }
+	#demo i.icon-yin { background-image:url(images/icon/yin.png); }
+	/*#demo p { background:rgba(0,0,0,.3); margin:0 200px; padding:20px; border-radius:1000px; font-size:16px; }
+	#demo p span { margin:0 15px; }*/
+	.demo_r{float:right;display: inline-block; width:50%; text-align: right; padding-right: 10px; line-height: 50px; color: #fff; box-sizing: border-box !important; -webkit-box-sizing: border-box !important; -moz-box-sizing: border-box !important; -ms-box-sizing: border-box !important;font-size:14px;}
+</style>
+    <header class="m-navbar navbar-fixed">
+        <a class="navbar-item" ><input type="text" class="cell-input" readonly id="J_Address" placeholder="地区" style="width: 100%; margin-right:0px; text-align: center;"><i class="back-ico x_up" style="float: right;"></i></a>
+        <div class="navbar-width"><div class="seach_v"><i class="icon-search"></i>搜索附近加油站</div></div>
+    </header>
+    <div class="g-scrollview" style="margin-top: 40px;">
+       <div class="m-slider" data-ydui-slider>
+            <div class="slider-wrapper">
+                <div class="slider-item">
+                    <a href="#">
+                        <img src="images/01.png">
+                    </a>
+                </div>
+                <div class="slider-item">
+                    <a href="#">
+                        <img src="images/02.png">
+                    </a>
+                </div>
+                <div class="slider-item">
+                    <a href="#">
+                        <img src="images/03.png">
+                    </a>
+                </div>
+            </div>
+            <div class="slider-pagination"></div>
+        </div>
+        <div class="weather">
+	        <div id="demo">
+	        	<script>$('#demo').leoweather({format:'<i class="icon-{图标}"></span>{天气}<span>{气温}℃</i>'});</script>
+	        	<!--<iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=52&icon=1&num=3" width="90" height="25" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" ></iframe>-->
+	        </div>
+	        <div class="demo_r"><span>今日健康</span>&nbsp;&nbsp;PM2.5&nbsp;&nbsp;<span>良</span></div>
+        </div>
+        
+        <div class="title_h2 bg_fff"><h2>最新资讯</h2>加油88折，先加油后付款，先花后付</div>
+        <table width="100%"  cellspacing="10" border="0" class="table_01 bg_fff">
+        	<tr>
+        		<td rowspan="2"><a><img src="images/shenqing_edu.png" class="im_01" /><br>申请额度</a></td>
+        		<td><a href="recharge.html"><img src="images/youka_chongzhi.png" class="im_02" />我要加油</a></td>
+        		<td rowspan="2"><a href="withdrawals.html"><img src="images/shenqing_chaxun.png" class="im_01" /><br>申请提现</a></td>
+        	</tr>
+        	<tr>
+     
+        		<td><a href="xhhf.html"><img src="images/zijin_xiangqing.png" class="im_02" />先花后付</a></td>
+ 
+        	</tr>
+        </table>
+       
+        <div class="m-tab" data-ydui-tab >
+            <ul class="tab-nav"style="border-top: 1px solid #eef0ef;">
+                <li class="tab-nav-item tab-active"><a href="javascript:;">头条</a></li>
+                <li class="tab-nav-item"><a href="javascript:;">行业</a></li>
+                <li class="tab-nav-item"><a href="javascript:;">公司</a></li>
+            </ul>
+            <div class="tab-panel">
+                <div class="tab-panel-item tab-active">
+                	<div class="m-list list-theme4">
+			            <a href="index.html" class="list-item">
+			                <div class="list-img"><img src="images/main_01.jpg"></div>
+			                <div class="list-mes">
+			                    <h3 class="list-title">打造最实惠车主加油方式，打造互联网+金融+消费场景</h3>
+			                    <div class="list-mes-item">
+			                        <div><!--
+			                            <span class="list-price"><em>¥</em>34.7</span>
+			                            <span class="list-del-price">¥45.65</span>-->
+			                        </div>
+			                        <div>热点</div>
+			                    </div>
+			                </div>
+			            </a>
+			            <a href="index.html" class="list-item">
+			                <div class="list-img"><img src="images/main_01.jpg"></div>
+			                <div class="list-mes">
+			                    <h3 class="list-title">打造最实惠车主加油方式，打造互联网+金融+消费场景</h3>
+			                    <div class="list-mes-item">
+			                        <div><!--
+			                            <span class="list-price"><em>¥</em>34.7</span>
+			                            <span class="list-del-price">¥45.65</span>-->
+			                        </div>
+			                        <div>热点</div>
+			                    </div>
+			                </div>
+			            </a>
+			        </div>
+                </div>
+                <div class="tab-panel-item">
+                	<div class="m-list list-theme4">
+			            <a href="index.html" class="list-item">
+			                <div class="list-img"><img src="images/main_01.jpg"></div>
+			                <div class="list-mes">
+			                    <h3 class="list-title">打造最实惠车主加油方式，打造互联网+金融+消费场景</h3>
+			                    <div class="list-mes-item">
+			                        <div><!--
+			                            <span class="list-price"><em>¥</em>34.7</span>
+			                            <span class="list-del-price">¥45.65</span>-->
+			                        </div>
+			                        <div>热点</div>
+			                    </div>
+			                </div>
+			            </a>
+			        </div>
+                </div>
+                <div class="tab-panel-item">
+                	<div class="m-list list-theme4">
+			            <a href="index.html" class="list-item">
+			                <div class="list-img"><img src="images/main_01.jpg"></div>
+			                <div class="list-mes">
+			                    <h3 class="list-title">打造最实惠车主加油方式，打造互联网+金融+消费场景</h3>
+			                    <div class="list-mes-item">
+			                        <div><!--
+			                            <span class="list-price"><em>¥</em>34.7</span>
+			                            <span class="list-del-price">¥45.65</span>-->
+			                        </div>
+			                        <div>热点</div>
+			                    </div>
+			                </div>
+			            </a>
+			            <a href="index.html" class="list-item">
+			                <div class="list-img"><img src="images/main_01.jpg"></div>
+			                <div class="list-mes">
+			                    <h3 class="list-title">打造最实惠车主加油方式，打造互联网+金融+消费场景</h3>
+			                    <div class="list-mes-item">
+			                        <div><!--
+			                            <span class="list-price"><em>¥</em>34.7</span>
+			                            <span class="list-del-price">¥45.65</span>-->
+			                        </div>
+			                        <div>热点</div>
+			                    </div>
+			                </div>
+			            </a>
+			            <a href="index.html" class="list-item">
+			                <div class="list-img"><img src="images/main_01.jpg"></div>
+			                <div class="list-mes">
+			                    <h3 class="list-title">打造最实惠车主加油方式，打造互联网+金融+消费场景</h3>
+			                    <div class="list-mes-item">
+			                        <div><!--
+			                            <span class="list-price"><em>¥</em>34.7</span>
+			                            <span class="list-del-price">¥45.65</span>-->
+			                        </div>
+			                        <div>热点</div>
+			                    </div>
+			                </div>
+			            </a>
+			        </div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 20px; width: 100%; position: relative;"></div>
+    <footer class="m-tabbar tabbar-fixed">
+            <a href="index.html" class="tabbar-item tabbar-active">
+                <span class="tabbar-icon">
+                    <i class="demo-icons-ayy"></i>
+                </span>
+                <span class="tabbar-txt">爱油游</span>
+            </a>
+            <a href="shop.html" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <i class="demo-icons-shop"></i>
+                </span>
+                <span class="tabbar-txt">商   城</span>
+            </a>
+            <a href="#" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <i class="demo-icons-news"></i>
+                </span>
+                <span class="tabbar-txt">资  讯</span>
+            </a>
+            <a href="achievement.html" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <i class="demo-icons-yj"></i>
+                </span>
+                <span class="tabbar-txt">业  绩</span>
+            </a>
+            <a href="login.html" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <i class="demo-icons-uesr"></i>
+                    <span class="tabbar-dot"></span>
+                   <!-- <span class="badge badge-danger">2</span>-->
+                </span>
+                <div class="tabbar-txt">我  的</div>
+            </a>
+        </footer>
+
+<script src="js/source/ydui.citys.js"></script>
+<script src="js/ydui.js"></script>
+
+<script>
+    /**
+     * 默认调用
+     */
+    !function () {
+        var $target = $('#J_Address');
+
+        $target.citySelect();
+
+        $target.on('click', function (event) {
+            event.stopPropagation();
+            $target.citySelect('open');
+        });
+
+        $target.on('done.ydui.cityselect', function (ret) {
+            $(this).val(ret.city);
+        });
+    }();
+    
+    !function ($) {
+        var $tab = $('#J_Tab');
+
+        $tab.tab({
+            nav: '.tab-nav-item',
+            panel: '.tab-panel-item',
+            activeClass: 'tab-active'
+        });
+
+       
+    }(jQuery);
+</script>
+</body>
+</html>

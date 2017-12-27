@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/demo.css"/>
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/demo_css.css" />
+	</head>
+	<body>
+		<header class="m-navbar navbar-fixed">
+			<a href="javascript:history.go(-1)" class="navbar-item"><i class="back-ico"></i></a>
+	    	<div class="navbar-center"><span class="navbar-title">业绩</span></div>
+	 </header>
+			<div class="content">
+				<div class="tabbed ent_c">
+	        		<div class="topnv">
+		        		<div class="tit_tab">
+							<p class="title-list">
+						      <span class="on">我的业绩</span>
+						      <span>我的下属</span>
+						      <b><i></i></b>
+						    </p>
+					    </div>
+					</div>
+				    <div class="product-wrap">
+					    <div class="product show">
+					    	<div class="ach_bg padd_a">
+					    		<ul class="ach_01">
+							   		<li><b>我的<br>推广</b>
+							   			<span class="right cheng p_size15">2017年</span>
+							   			<div class="tit_ach">
+							   				<span>累计业绩(元)<br><font class="hong p_size18">1665000.00</font></span>
+							   				<span>累计收益(元)<br><font class="huang p_size18">2270.00</font></span>
+							   			</div>
+							   		</li>
+							   		<li class="main-10"><b>本月<br>统计</b>
+							   			<span class="right cheng p_size15">2017年</span>
+							   			<div class="tit_ach">
+							   				<span>累计业绩(元)<br><font class="hong p_size18">1665000.00</font></span>
+							   				<span>累计收益(元)<br><font class="huang p_size18">2270.00</font></span>
+							   			</div>
+							   		</li>
+							   </ul>
+					    	</div>
+						   
+						   <div class="mian padd_e10">
+								<p class="al_l p_size16 padd_10">我的交易</p>
+							</div>
+						   <div class="main main-60">您当前没有加油记录</div>
+					    </div>
+					    <div class="product ">
+					    	<div class="ach_bg padd_a">
+						       <ul class="ach_01">
+							   		<li>
+							   			<div class="tit_ach" style="padding-left: 0px;">
+							   				<span>累计业绩(元)<br><font class="hong p_size18">1665000.00</font></span>
+							   				<span>累计收益(元)<br><font class="huang p_size18">2270.00</font></span>
+							   				<p class="main-20">收益规则 ？</p>
+							   				<p class="hui p_size12">上次发布时间：2017-03-05</p>
+							   			</div>
+							   		</li>
+							   </ul>
+							</div>
+						   <div class="main">
+								<table cellpadding="0" cellspacing="0" width="100%" class="main">
+									<tr style="background: #cccccc;">
+										<th style="padding: 0px;"><select class="ach">
+											<option>2017年</option>
+											<option>2018年</option>
+											<option>2019年</option>
+											<option>2020年</option>
+											</select></th>
+										<th><select class="ach">
+											<option>1月</option>
+											<option>2月</option>
+											<option>3月</option>
+											<option>4月</option>
+											</select></th>
+										<th colspan="3" align="right">(月收益：2010.00元)</th>
+									</tr>
+									<tr style="background: #ffffcc;" class="hui">
+										<td>申请时间</td>
+										<td>客户姓名</td>
+										<td>客户电话</td>
+										<td>消费</td>
+										<td>收益(元)</td>
+									</tr>
+									<tr>
+										<td>08-14</td>
+										<td>王军</td>
+										<td>139****1482</td>
+										<td>1000元</td>
+										<td>10.00</td>
+									</tr>
+								</table>
+								
+							</div>	
+					    </div>
+					</div>
+				</div>
+				
+				
+				
+				
+				
+			</div>
+			
+			<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$(function(){		
+		//设计切换
+		$('.title-list span').mouseover(function(){
+			var liindex = $('.title-list span').index(this);
+			$(this).addClass('on').siblings().removeClass('on');
+			$('.product-wrap div.product').eq(liindex).fadeIn(300).siblings('div.product').hide();
+			var liWidth = $('.title-list span').width();
+			$('.tabbed .title-list b').stop(false,true).animate({'left' : liindex * liWidth + 'px'},300);
+		});
+		});
+	</script>
+	</body>
+</html>

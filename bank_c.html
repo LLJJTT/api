@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/demo.css"/>
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/demo_css.css" />
+</head>
+	<body>
+		<header class="m-navbar navbar-fixed">
+			<a href="javascript:history.go(-1)" class="navbar-item"><i class="back-ico"></i></a>
+	    	<div class="navbar-center"><span class="navbar-title">验证银行卡信息</span></div>
+	 </header>
+		<div class="content">
+			<div class="main m-cell main-10">
+			    <div class="cell-item">
+			        <div class="cell-left">银行卡：</div>
+			        <div class="cell-right"><input type="text" class="cell-input" readonly unselectable="on" value="哈尔滨银行储蓄卡" /></div>
+			    </div>
+			    <div class="cell-item">
+			        <div class="cell-left">卡&nbsp;&nbsp;号:</div>
+			        <div class="cell-right"><input type="text" class="cell-input" readonly unselectable="on" value="1234 5678 9123 4561 125"/></div>
+			    </div>
+			</div>
+			<div class="main padd_a al_l p_size12 hui">提醒：后续只能绑定该持卡人的银行卡</div>
+			<div class="main m-cell">
+			    <div class="cell-item">
+			        <div class="cell-left">手机号：</div>
+			        <div class="cell-right"><input type="number" class="cell-input" placeholder="银行预留手机号"  /><i class="fa fa-question-circle-o hui p_size20" id="J_Alert"></i></div>
+			    </div>
+			</div>
+			<div class="main main-10 padd_10"><button type="button" onclick="javascript:window.location.href='bank_c.html'" class="btn-block btn-warning" >下一步</button></div>
+			
+		</div>
+		<script src="js/ydui.js"></script>
+		<script>
+    !function (win, $) {
+        var dialog = win.YDUI.dialog;
+
+        /* 普通提示框*/
+        $('#J_Alert').on('click', function () {
+            dialog.alert('<b class="l_hei40 hei p_size16">手机号</b><br>银行预留手机号是在银行办卡时填写的手机号，若遗忘、换号可联系银行客服电话处理');
+        });
+
+        /* 正确提示框 */
+        $('#J_ToastS').on('click', function () {
+            dialog.toast('鼠标不错哟！', 'success', 1000);
+        });
+
+        /* 错误提示框 */
+        $('#J_ToastE').on('click', function () {
+            dialog.toast('别乱点啊！', 'error', 1000, function () {
+                dialog.alert('给你一次重来的机会！');
+            });
+        });
+
+        /* 不带图标提示框 */
+        $('#J_ToastN').on('click', function () {
+            dialog.toast('一个没有任何图标的提示！', 'none', 1000);
+        });
+
+        /* 加载中提示框 */
+        $('#J_Loading').on('click', function () {
+            dialog.loading.open('很快加载好了');
+            setTimeout(function () {
+                dialog.loading.close();/* 移除loading */
+            }, 2000);
+        });
+
+        /* 顶部提示框 */
+        $('#J_Notify').on('click', function () {
+            dialog.notify('5秒后自动消失，点我也可以消失！', 5000, function(){
+                console.log('我走咯！');
+            });
+        });
+    }(window, jQuery);
+</script>
+	</body>
+</html>

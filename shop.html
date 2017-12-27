@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="author" content="why, why.0505@163.com"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/demo_css.css" />
+    
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.17.1/axios.js"></script>
+    <!-- <script src="js/vue-resource.js"></script> -->
+</head>
+<style>
+	body{ overflow: hidden;}
+</style>
+<body>
+  <div id="app">
+  		<header class="m-navbar navbar-fixed top_in">
+        <a class="navbar-item"><input type="text" class="cell-input" readonly id="J_Address" value="地区" style="width: 100%; margin-right:0px; text-align: center;"><i class="back-ico x_up"></i></a>
+        <div class="navbar-center"><div class="seach_v al_l"><i class="icon-search"></i>输入您当前要搜索的商品</div></div>
+        <div class="navbar-item" style="min-width:20%;"><a href="cart.html" class="pos_r"><i class="fa fa-shopping-cart" style="font-size: 0.4rem;"></i><span class="tabbar-dot"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+        	<i class="b_png" id="btnShow"></i>
+        	
+	    	<div class="net_on">
+					<a href="notice.html"><i class="i-news"></i>消息</a>
+					<a href="follow.html"><i class="fa fa-heart-o p_s_4rem" style="background: none;" ></i>关注</a>
+					<a href="city_g.html"><i class="icon-location p_s_4rem" style="background: none; margin-top: -15px;"></i>地址管理</a>
+				</div>
+        &nbsp;&nbsp;</div>
+    </header> 
+    <div class="g-scrollview" style="padding: 0rem 0 1.5rem;">
+    	<!-- 轮播图开始 -->
+       <div class="m-slider ban1" data-ydui-slider>
+            <div class="slider-wrapper">
+            	<div class="slider-item" v-on:click="goMove" v-for="x in imgArr2">
+                    <a href="UpLoad/move_img.html" class="m-list">
+                        <img v-on:click="goMove" :src="x" :data-url="x">
+                    </a>
+                </div>
+                <!-- <div class="slider-item">
+                    <a href="javascript:;" class="m-list">
+                        <img src="images/none_w.jpg" data-url="images/03.png">
+                    </a>
+                </div> -->
+            </div>
+            <div class="slider-pagination bg_none"></div>
+        </div>
+        <!-- 轮播图结束 -->
+        <!--分类导航-->
+       	<div class="m-grids-5 shop-5">
+		    <a href="javascript:;" class="grids-item">
+		    	<div class="grids-icon"><i class="icon-home"></i></div>
+		        <div class="grids-txt"><span>今日特价</span></div>
+		    </a>
+		    <a href="javascript:;" class="grids-item">
+		    	<div class="grids-icon"><i class="icon-home"></i></div>
+		        <div class="grids-txt"><span>特卖商品</span></div>
+		    </a>
+		    <a href="javascript:;" class="grids-item">
+		    	<div class="grids-icon"><i class="icon-home"></i></div>
+		        <div class="grids-txt"><span>花有消费</span></div>
+		    </a>
+		    <a href="javascript:;" class="grids-item">
+		    	<div class="grids-icon"><i class="icon-home"></i></div>
+		        <div class="grids-txt"><span>特卖商品</span></div>
+		    </a>
+		    <a href="whole_class.html" class="grids-item fg">
+		    	<div class="grids-icon"><i class="fa fa-th-large p_s_4rem"></i></div>
+		        <div class="grids-txt"><span>全部</span></div>
+		    </a>
+		    <a href="shop_order.html" class="grids-item">
+		    	<div class="grids-icon"><i class="ico-shop i-order"></i></div>
+		        <div class="grids-txt"><span>全部订单</span></div>
+		    </a>
+		    <a href="shop_order.html" class="grids-item">
+		    	<div class="grids-icon"><i class="ico-shop i-fh"><span class="tabbar-dot"></span></i></div>
+		        <div class="grids-txt"><span>待发货</span></div>
+		    </a>
+		    <a href="shop_order.html" class="grids-item">
+		    	<div class="grids-icon"><i class="ico-shop i-sh"><span class="tabbar-dot"></span></i></div>
+		        <div class="grids-txt"><span>待收货</span></div>
+		    </a>
+		    <a href="javascript:;" class="grids-item">
+		    	<div class="grids-icon"><i class="ico-shop i-pl"><span class="tabbar-dot"></span></i></div>
+		        <div class="grids-txt"><span>待评论</span></div>
+		    </a>
+		    <a href="refund.html" class="grids-item fg">
+		    	<div class="grids-icon"><i class="ico-shop i-ts"></i></div>
+		        <div class="grids-txt"><span>退换/售后</span></div>
+		    </a>
+		</div>
+		<!--ad1-->
+        <div class="mian padd_a m-list">
+        	<img v-on:click="goAd_img" :src="this.imgUrlAd1" width="100%" />
+        </div>
+        <!--今日头条-->
+        <div id="broadcast" class="mian bg_fff padd_10" name="giftactive">
+		  <div class="float_l"><img src="images/ico_shop_01.jpg" height="40" /></div>
+		  <div id="demo" class=" pos_r l_hei40 al_l padd_10" style="overflow:hidden; height: 40px; padding-right: 30px;">
+		    <ul class="mingdan" id="holder">
+		      <li><a href="jr_news.html" target="_blank"><span class="btn-min btn-danger_b t_log">推荐</span>10.1日超多惊喜日超多惊喜日超多惊喜</a></li>
+		      <li><a href="jr_news.html" target="_blank"><span class="btn-min btn-danger_b t_log">推荐</span>10.2日超多惊喜</a></li>
+		      <li><a href="jr_news.html" target="_blank"><span class="btn-min btn-danger_b t_log">推荐</span>10.3日超多惊喜</a></li>
+		      <li><a href="jr_news.html" target="_blank"><span class="btn-min btn-danger_b t_log">推荐</span>10.4日超多惊喜</a></li>
+		      <li><a href="jr_news.html" target="_blank"><span class="btn-min btn-danger_b t_log">推荐</span>10.5日超多惊喜</a></li>
+		    </ul>
+		    <div class="pos_a p_s_2rem" style="right:0; top:0">更多</div>
+		  </div>
+		</div>
+		<!--限时秒杀-->
+        <div class="mian bg_fff main-10 padd_e5">
+        	<hr class="bx_fen">
+        	<img src="images/ico_shop_02.jpg" class="pos_r" style="display: inline-block; width: 1.4rem;" />
+        </div>
+        <div class="swiper-container shop_ul_1 bg_fff">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide"><a href="shop_pr_viw.html"><div class="img m-list"><img src="images/none.jpg" data-url="images/bute/pro1.jpg"/><span class="bg_fen">9.8折</span></div><p><b class="fen l_hei30">￥158.00</b></p></a></div>
+	            <div class="swiper-slide"><a href="shop_pr_viw.html"><div class="img m-list"><img src="images/none.jpg" data-url="images/bute/pro2.jpg"/><span class="bg_fen">9.8折</span></div><p><b class="fen l_hei30">￥158.00</b></p></a></div>
+	            <div class="swiper-slide"><a href="shop_pr_viw.html"><div class="img m-list"><img src="images/none.jpg" data-url="images/bute/pro3.jpg"/><span class="bg_fen">9.8折</span></div><p><b class="fen l_hei30">￥158.00</b></p></a></div>
+	            <div class="swiper-slide"><a href="shop_pr_viw.html"><div class="img m-list"><img src="images/none.jpg" data-url="images/bute/pro1.jpg"/><span class="bg_fen">9.8折</span></div><p><b class="fen l_hei30">￥158.00</b></p></a></div>
+	            <div class="swiper-slide"><a href="shop_pr_viw.html"><div class="img m-list"><img src="images/none.jpg" data-url="images/bute/pro2.jpg"/><span class="bg_fen">9.8折</span></div><p><b class="fen l_hei30">￥158.00</b></p></a></div>
+	            <div class="swiper-slide"><a href="shop_pr_viw.html"><div class="img m-list"><img src="images/none.jpg" data-url="images/bute/pro3.jpg"/><span class="bg_fen">9.8折</span></div><p><b class="fen l_hei30">￥158.00</b></p></a></div>
+	            <div class="swiper-slide"><a href="shop_pr_viw.html"><div class="img m-list"><img src="images/none.jpg" data-url="images/bute/pro1.jpg"/><span class="bg_fen">9.8折</span></div><p><b class="fen l_hei30">￥158.00</b></p></a></div>
+	            <div class="swiper-slide"><a href="shop_pr_viw.html"><div class="img m-list"><img src="images/none.jpg" data-url="images/bute/pro2.jpg"/><span class="bg_fen">9.8折</span></div><p><b class="fen l_hei30">￥158.00</b></p></a></div>
+	            <div class="swiper-slide"><a href="shop_pr_viw.html"><div class="img m-list"><img src="images/none.jpg" data-url="images/bute/pro3.jpg"/><span class="bg_fen">9.8折</span></div><p><b class="fen l_hei30">￥158.00</b></p></a></div>
+	            <div class="swiper-slide"><a href="shop_pr_viw.html"><div class="img m-list"><img src="images/none.jpg" data-url="images/bute/pro1.jpg"/><span class="bg_fen">9.8折</span></div><p><b class="fen l_hei30">￥158.00</b></p></a></div>
+	        </div>
+	        <!-- Add Pagination -->
+	        <div class="swiper-scrollbar"></div>
+	    </div>
+  
+  
+      <!--ad2-->
+        <div class="mian main-10 padd_10 m-list">
+        	<img v-on:click="goAd_img" :src="this.imgUrlAd2" width="100%" />
+        </div>
+        <!--品牌-->
+        <div class="main bg_fff main-10 border-b al_c">
+        	<img src="images/binfen_pinpai.png" height="25" class="main-5" style="display: inline-block;" />
+        </div>
+        <div class="main shop_ul_2">
+	        <div class="m-grids-4" >
+			    <a href="UpLoad/activity.html" class="grids-item t1b">
+			        <div class="grids-txt"><span><b class="fen">全球时尚</b><br><font class="hui p_s_2rem">大牌精致时尚</font></span></div>
+			        <div class="grids-icon m-list"><img v-on:click="gotolink"   :src="this.activityArrType1[0]"></div>
+			    </a>
+			    <a href="UpLoad/activity.html" class="grids-item t2b">
+			        <div class="grids-icon m-list"><img v-on:click="gotolink" :src="this.activityArrType1[1]"></div>
+			    </a>
+			    <a href="UpLoad/activity.html" class="grids-item t1b">
+			        <div class="grids-txt"><span><b class="l_lan">明星品牌</b><br><font class="hui p_s_2rem">大牌精致时尚</font></span></div>
+			        <div class="grids-icon m-list"><img v-on:click="gotolink" :src="this.activityArrType1[2]"></div>
+			    </a>
+			    <a href="UpLoad/activity.html" class="grids-item t2b">
+			        <div class="grids-icon m-list"><img v-on:click="gotolink" :src="this.activityArrType1[3]"></div>
+			    </a>
+			    <a href="UpLoad/activity.html" class="grids-item">
+			        <div class="grids-txt"><span><font class="lan">潮流女装</font><br><font class="hui p_s_2rem">大牌精致时尚</font></span></div>
+			        <div class="grids-icon m-list"><img v-on:click="gotolink" :src="this.activityArrType1[4]"></div>
+			    </a>
+			    <a href="UpLoad/activity.html" class="grids-item">
+			        <div class="grids-txt"><span><font class="zi">精品男装</font><br><font class="hui p_s_2rem">大牌精致时尚</font></span></div>
+			        <div class="grids-icon m-list"><img v-on:click="gotolink" v-on:click="gotolink" :src="this.activityArrType1[5]"></div>
+			    </a>
+			    <a href="UpLoad/activity.html" class="grids-item">
+			        <div class="grids-txt"><span><font class="c_lv">个性美妆</font><br><font class="hui p_s_2rem">大牌精致时尚</font></span></div>
+			        <div class="grids-icon m-list"><img v-on:click="gotolink" v-on:click="gotolink" :src="this.activityArrType1[6]"></div>
+			    </a>
+			    <a href="UpLoad/activity.html" class="grids-item">
+			        <div class="grids-txt"><span><font class="cheng">生活必备</font><br><font class="hui p_s_2rem">大牌精致时尚</font></span></div>
+			        <div class="grids-icon m-list"><img v-on:click="gotolink" :src="this.activityArrType1[7]"></div>
+			    </a>
+			</div>
+		</div>
+		<!--块1-->
+        <!--<div class="main bg_fff main-10 padd_e10 border-b">
+        	<hr class="bx_fen bg_cheng">
+        	<span class="pos_r cheng shop_p bg_fff" style="display: inline-block;">美食聚集</span>
+        </div>-->
+        <!-- 特价狂欢 -->
+        <div class="main bg_fff main-10 border-b al_c">
+        	<img src="images/tejia_kuanghuan.png" height="25" class="main-5" style="display: inline-block;" />
+        </div>
+        <div class="main shop_ul_2">
+        	<table cellpadding="0" cellspacing="0" width="100%" border="0" class="main bg_fff r2-d1">
+        		<tr>
+        			<td rowspan="2" width="50%" valign="top" class="ri">
+        				<a href="shop_pr_viw.html" class="shop_a">
+					        <p>天下美食</p>
+					        <p class="cheng">超低价购买真实惠</p>
+					        <div class="img m-list"><img v-on:click="gotolink" :src="this.activityArrType2[0]"></div>
+					    </a>
+        			</td>
+        			<td class="bt" width="50%">
+        				<a href="shop_pr_viw.html" class="shop_d">
+			        	<span class="bg_cheng">礼盒随意送</span>
+			        	<p class="hui">精装礼盒</p>
+			        	<p class="hui">送好友，送亲人</p>
+			        	<div class="img m-list"><img v-on:click="gotolink" :src="this.activityArrType2[1]"></div>
+			        </a></td>
+        		</tr>
+        		<tr>
+        			<td>
+        				<a href="shop_pr_viw.html" class="shop_d">
+			        	<span class="bg_lv">礼盒随意送</span>
+			        	<p class="hui">精装礼盒</p>
+			        	<p class="hui">送好友，送亲人</p>
+			        	<div class="img m-list"><img v-on:click="gotolink" :src="this.activityArrType2[2]"></div>
+			        </a></td>
+        		</tr>
+        	</table>
+	        
+		</div>
+		<!-- 天下美食 -->
+		<div class="main main-5">
+	        <div class="swiper-container shop_ul_3 bg_fff">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide"><a href="javascript:;"><div class="img m-list"><img src="images/none.jpg" data-url="images/bute/pro15.jpg"/></div><p>天下美食应有尽有</p><p><b class="fen">￥158</b><s class="hui padd_10">￥280</s></p></a></div>
+		            <div class="swiper-slide"><a href="javascript:;"><div class="img m-list"><img src="images/none.jpg" data-url="images/bute/pro16.jpg"/></div><p>天下美食应有尽有</p><p><b class="fen">￥158</b><s class="hui padd_10">￥280</s></p></a></div>
+		            <div class="swiper-slide"><a href="javascript:;"><div class="img m-list"><img src="images/none.jpg" data-url="images/bute/pro17.jpg"/></div><p>天下美食应有尽有</p><p><b class="fen">￥158</b><s class="hui padd_10">￥280</s></p></a></div>
+		            <div class="swiper-slide"><a href="javascript:;"><div class="img m-list"><img src="images/none.jpg" data-url="images/bute/pro15.jpg"/></div><p>天下美食应有尽有</p><p><b class="fen">￥158</b><s class="hui padd_10">￥280</s></p></a></div>
+		            <div class="swiper-slide"><a href="javascript:;"><div class="img m-list"><img src="images/none.jpg" data-url="images/bute/pro16.jpg"/></div><p>天下美食应有尽有</p><p><b class="fen">￥158</b><s class="hui padd_10">￥280</s></p></a></div>
+		            <div class="swiper-slide"><a href="javascript:;"><div class="img m-list"><img src="images/none.jpg" data-url="images/bute/pro17.jpg"/></div><p>天下美食应有尽有</p><p><b class="fen">￥158</b><s class="hui padd_10">￥280</s></p></a></div>
+		        </div>
+		        <!-- Add Pagination -->
+		        <div class="swiper-scrollbar"></div>
+		    </div>
+	    </div>
+  
+        <!--块2-->
+        <!--<div class="main bg_fff main-10 padd_e10 border-b">
+        	<hr class="bx_fen bg_l_lan">
+        	<span class="pos_r l_lan shop_p bg_fff" style="display: inline-block;">精品推荐</span>
+        </div>-->
+        <div class="main bg_fff main-10 border-b al_c">
+        	<img src="images/lexiang_haitao.png" height="25" class="main-5" style="display: inline-block;" />
+        </div>
+        <div class="main shop_ul_2">
+	        <div class="m-grids-2">
+			    <a href="#" class="grids-item">
+			        <div class="grids-txt al_l main-5"><span><font>美妆好货</font><br><font class="l_lan p_s_2rem">女神让你变美丽</font></span></div>
+			        <div class="grids-icon m-list"><img v-on:click="gotolink" :src="this.activityArrType3[0]"></div>
+			    </a>
+			    <a href="#" class="grids-item">
+			        <div class="grids-txt al_l main-5"><span><font>美妆好货</font><br><font class="l_lan p_s_2rem">女神让你变美丽</font></span></div>
+			        <div class="grids-icon m-list"><img v-on:click="gotolink" :src="this.activityArrType3[1]"></div>
+			    </a>
+			</div>
+		</div>
+        <div class="main shop_ul_2">
+	        <div class="m-grids-3">
+			    <a href="#" class="grids-item">
+			        <div class="grids-txt al_l">
+			        	<span>
+				        	<font>潮流女装</font>
+				        	<br>
+				        	<font class="l_lan p_s_2rem">大牌精致时尚</font>
+				        </span>
+			    </div>
+			        <div class="grids-icon m-list">
+			        	<img v-on:click="gotolink" v-on:click="gotolink" :src="this.activityArrType3[2]">
+			        </div>
+			    </a>
+			    <a href="#" class="grids-item">
+			        <div class="grids-txt al_l">
+			        	<span>
+			        		<font>精品男装</font>
+			        		<br>
+			        		<font class="l_lan p_s_2rem">大牌精致时尚</font>
+			        	</span>
+			        </div>
+			        <div class="grids-icon m-list">
+			        	<img v-on:click="gotolink" :src="this.activityArrType3[3]">
+			        </div>
+			    </a>
+			    <a href="#" class="grids-item">
+			        <div class="grids-txt al_l">
+			        	<span>
+			        		<font>个性美妆</font>
+			        		<br>
+			        		<font class="l_lan p_s_2rem">大牌精致时尚</font>
+			        	</span>
+			        </div>
+			        <div class="grids-icon m-list">
+			        	<img v-on:click="gotolink" v-on:click="gotolink" :src="this.activityArrType3[4]">
+			        </div>
+			    </a>
+			</div>
+		</div>
+        <!--块3-->
+        <!--<div class="main bg_fff main-10 padd_e10 border-b">
+        	<hr class="bx_fen bg_zi">
+        	<span class="pos_r zi shop_p bg_fff" style="display: inline-block;">店铺优选</span>
+        </div>-->
+        <div class="main bg_fff main-10 border-b al_c">
+        	<img src="images/dianpu_youxuan.png" height="25" class="main-5" style="display: inline-block;" />
+        </div>
+       <div class="main">
+	        <div class="swiper-container shop_ul_4 bg_fff">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide">
+		            	<a href="javascript:;">
+		            		<div class="logo-img m-list">
+		            			<img src="images/none.jpg" data-url="images/main_05.jpg"/>
+		            		</div>
+		            		<p class="title">ONLY官方旗舰店</p>
+		            		<font class="float_r zi">进店逛逛&nbsp;<i class="fa fa-chevron-right"></i>
+		            		</font>
+		            	</a>
+		            	<div class="m-grids-2">
+						    <a href="#" class="grids-item">
+						        <div class="grids-icon m-list">
+						        	<img src="images/none.jpg" data-url="images/bute/pro23.jpg">
+						        </div>
+						    </a>
+						    <div href="#" class="grids-item">
+						        <a class="shop_d m-list">
+						        	<img src="images/none.jpg" data-url="images/bute/pro24.jpg">
+						        </a>
+						        <a class="shop_d m-list">
+						        	<img src="images/none.jpg" data-url="images/bute/pro25.jpg">
+						        </a>
+						    </div>
+						</div>
+		            </div>
+		            <div class="swiper-slide">
+		            	<a href="javascript:;">
+		            		<div class="logo-img m-list">
+		            			<img src="images/none.jpg" data-url="images/main_05.jpg"/>
+		            		</div>
+		            		<p class="title">ONLY官方旗舰店</p>
+		            		<font class="float_r zi">进店逛逛&nbsp;<i class="fa fa-chevron-right"></i>
+		            		</font>
+		            	</a>
+		            	<div class="m-grids-2">
+						   <a href="#" class="grids-item">
+						        <div class="grids-icon m-list"><img src="images/none.jpg" data-url="images/bute/pro23.jpg"></div>
+						    </a>
+						    <div href="#" class="grids-item">
+						        <a class="shop_d m-list"><img src="images/none.jpg" data-url="images/bute/pro24.jpg"></a>
+						        <a class="shop_d m-list"><img src="images/none.jpg" data-url="images/bute/pro25.jpg"></a>
+						    </div>
+						</div>
+		            </div>
+		            <div class="swiper-slide">
+		            	<a href="javascript:;"><div class="logo-img m-list"><img src="images/none.jpg" data-url="images/main_05.jpg"/></div><p class="title">ONLY官方旗舰店</p><font class="float_r zi">进店逛逛&nbsp;<i class="fa fa-chevron-right"></i></font></a>
+		            	<div class="m-grids-2">
+						    <a href="#" class="grids-item">
+						        <div class="grids-icon m-list"><img src="images/none.jpg" data-url="images/bute/pro23.jpg"></div>
+						    </a>
+						    <div href="#" class="grids-item">
+						        <a class="shop_d m-list"><img src="images/none.jpg" data-url="images/bute/pro24.jpg"></a>
+						        <a class="shop_d m-list"><img src="images/none.jpg" data-url="images/bute/pro25.jpg"></a>
+						    </div>
+						</div>
+		            </div>
+		            <div class="swiper-slide">
+		            	<a href="javascript:;">
+		            		<div class="logo-img m-list">
+		            			<img src="images/none.jpg" data-url="images/main_05.jpg"/>
+		            		</div>
+		            		<p class="title">ONLY官方旗舰店</p>
+		            		<font class="float_r zi">进店逛逛&nbsp;<i class="fa fa-chevron-right"></i></font>
+		            	</a>
+		            	<div class="m-grids-2">
+						    <a href="#" class="grids-item">
+						        <div class="grids-icon m-list">
+						        	<img src="images/none.jpg" data-url="images/bute/pro23.jpg">
+						        </div>
+						    </a>
+						    <div href="#" class="grids-item">
+						        <a class="shop_d m-list">
+						        	<img src="images/none.jpg" data-url="images/bute/pro24.jpg">
+						        </a>
+						        <a class="shop_d m-list">
+						        	<img src="images/none.jpg" data-url="images/bute/pro25.jpg">
+						        </a>
+						    </div>
+						</div>
+		            </div>
+		        </div>
+		        <!-- Add Pagination -->
+		        <div class="swiper-pagination"></div>
+		    </div>
+	    </div>
+ 
+       
+     <!--块4-->
+        <!--<div class="main bg_fff main-10 padd_e10 border-b">
+        	<hr class="bx_fen bg_hong">
+        	<span class="pos_r hong shop_p bg_fff" style="display: inline-block;">新品上市</span>
+        </div>  -->
+        <div class="main bg_fff main-10 border-b al_c">
+        	<img src="images/xinpin_shangshi.png" height="25" class="main-5" style="display: inline-block;" />
+        </div>
+       <div class="main m-list list-theme2">
+            <a href="javascript:;" class="list-item">
+                <div class="list-img">
+                	<img src="images/none.jpg" data-url="images/bute/xinpin01.jpg">
+                </div>
+                <div class="list-mes">
+                    <h3 class="list-title">2016夏天新款男士短袖t恤青少年韩版修身印花圆领半袖男装衣服潮</h3>
+                    <div class="list-mes-item">
+                        <div>
+                            <span class="list-price"><em>¥</em>34.7</span>
+                            <s class="list-del-price">¥45.65</s>
+                        </div>
+                        <div class="p_s_1rem">销量：0</div>
+                    </div>
+                </div>
+            </a>
+            <a href="javascript:;" class="list-item">
+                <div class="list-img">
+                    <img src="images/none.jpg" data-url="images/bute/xinpin02.jpg">
+                </div>
+                <div class="list-mes">
+                    <h3 class="list-title">2016夏天新款男士短袖t恤青少年韩版修身印花圆领半袖男装衣服潮</h3>
+                    <div class="list-mes-item">
+                        <div>
+                            <span class="list-price"><em>¥</em>34.7</span>
+                            <s class="list-del-price">¥45.65</s>
+                        </div>
+                        <div class="p_s_1rem">销量：0</div>
+                    </div>
+                </div>
+            </a>
+            <a href="javascript:;" class="list-item">
+                <div class="list-img">
+                    <img src="images/none.jpg" data-url="images/bute/xinpin03.jpg">
+                </div>
+                <div class="list-mes">
+                    <h3 class="list-title">2016夏天新款男士短袖t恤青少年韩版修身印花圆领半袖男装衣服潮</h3>
+                    <div class="list-mes-item">
+                        <div>
+                            <span class="list-price"><em>¥</em>34.7</span>
+                            <s class="list-del-price">¥45.65</s>
+                        </div>
+                        <div class="p_s_1rem">销量：0</div>
+                    </div>
+                </div>
+            </a>
+            <a href="javascript:;" class="list-item">
+                <div class="list-img">
+                    <img src="images/none.jpg" data-url="images/bute/xinpin04.jpg">
+                </div>
+                <div class="list-mes">
+                    <h3 class="list-title">2016夏天新款男士短袖t恤青少年韩版修身印花圆领半袖男装衣服潮</h3>
+                    <div class="list-mes-item">
+                        <div>
+                            <span class="list-price"><em>¥</em>34.7</span>
+                            <s class="list-del-price">¥45.65</s>
+                        </div>
+                        <div class="p_s_1rem">销量：0</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+       
+       
+
+       </div>
+    <footer class="m-tabbar tabbar-fixed">
+            <a href="index.html" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <i class="demo-icons-ayy"></i>
+                </span>
+                <span class="tabbar-txt">爱油游</span>
+            </a>
+            <a href="shop.html" class="tabbar-item tabbar-active">
+                <span class="tabbar-icon">
+                    <i class="demo-icons-shop"></i>
+                </span>
+                <span class="tabbar-txt">商   城</span>
+            </a>
+            <a href="#" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <i class="demo-icons-news"></i>
+                </span>
+                <span class="tabbar-txt">资  讯</span>
+            </a>
+            <a href="achievement.html" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <i class="demo-icons-yj"></i>
+                </span>
+                <span class="tabbar-txt">业  绩</span>
+            </a>
+            <a href="login.html" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <i class="demo-icons-uesr"></i>
+                    <span class="tabbar-dot"></span>
+                   <!-- <span class="badge badge-danger">2</span>-->
+                </span>
+                <div class="tabbar-txt">我  的</div>
+            </a>
+        </footer>
+<a href="javascript:;" class="go"><img src="images/hui_dingbu.png"><br>顶部</a>
+
+  </div>
+    
+<script src="js/source/ydui.citys.js"></script>
+<script src="js/ydui.js"></script>
+<script>
+	new  Vue({
+		el:"#app",
+		data:{
+			apiUrl:'http://192.168.1.111:3000/mock/13/index',
+			imgUrlArrBanner:[],
+			imgArr2: [],
+			imgUrlAd1:[],
+			imgUrlAd2:[],
+			activityArr:[],
+			activityArrType1:[],
+			activityArrType2:[],
+			activityArrType3:[],
+			avtivityArrUrl1:[],
+			avtivityArrUrl2:[],
+			avtivityArrUrl3:[],
+		},
+		mounted(){
+			axios.get(this.apiUrl)
+                .then((res) => {
+                	this.imgUrlArrBanner = res.data.data.banner;//banner
+                	this.imgUrlAd1 = res.data.data.ad_1[0].ad_img_url;//ad1
+                	this.imgUrlAd2 = res.data.data.ad_2[0].ad_img_url;//ad2
+                	this.activityArr = res.data.data.activity;
+                	// 遍历banner的url
+                	this.imgUrlArrBanner.map(item => {
+                		this.imgArr2.push(item.ad_img_url)
+                	})
+                	// 遍历activity的url
+                	this.activityArr.map(item => {
+                		if (item.type_id==1) {
+                			this.activityArrType1.push(item.img_url);
+                		}
+                		else if (item.type_id==2) {
+                			this.activityArrType2.push(item.img_url);
+                		}
+                		else if (item.type_id==3) {
+                			this.activityArrType3.push(item.img_url);
+                		}
+                	})
+                	// console.log(this.activityArrType3);
+
+                })
+                .catch(function(res) {
+                    console.log(res.data)
+                });
+		},
+		methods:{
+			goMove:function(event){
+				event.stopPropagation();
+				window.location.href="UpLoad/move_img.html";
+			},
+			goAd_img:function(event){
+				// event.preventDefault();
+				// 阻止事件冒泡
+				event.stopPropagation();
+				window.location.href="UpLoad/ad_img.html";
+			},
+			gotolink:function(){
+				event.stopPropagation();
+				window.location.href="UpLoad/activity.html";
+			}
+		}
+	   
+
+
+    })
+</script>
+<script src="js/swiper.min.js"></script>
+<script>
+	
+    /**
+     * 默认调用
+     */
+    !function () {
+        var $target = $('#J_Address');
+
+        $target.citySelect();
+
+        $target.on('click', function (event) {
+            event.stopPropagation();
+            $target.citySelect('open');
+        });
+
+        $target.on('done.ydui.cityselect', function (ret) {
+            $(this).val(ret.city);
+        });
+    }();
+    
+    !function ($) {
+        var $tab = $('#J_Tab');
+
+        $tab.tab({
+            nav: '.tab-nav-item',
+            panel: '.tab-panel-item',
+            activeClass: 'tab-active'
+        });
+
+       
+    }(jQuery);
+</script>
+<script>
+	var swiper = new Swiper('.shop_ul_1', {
+        scrollbar: '.swiper-scrollbar',
+        scrollbarHide: true,
+        slidesPerView: 'auto',
+        spaceBetween: 1,
+        grabCursor: true
+    });
+ 	var swiper = new Swiper('.shop_ul_3', {
+        scrollbar: '.swiper-scrollbar',
+        scrollbarHide: true,
+        slidesPerView: 'auto',
+        spaceBetween: 1,
+        grabCursor: true
+    });
+    var mySwiper = new Swiper(".shop_ul_4", {
+	 	pagination: '.swiper-pagination',
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflow: {
+            rotate: 40,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows : true
+        }
+	});
+	$(function(){
+			$('.g-scrollview').scroll(function(){
+		          height = $('.g-scrollview').scrollTop();
+		   	  	  if(height > 150){
+		   	  	  	$('header').addClass('bg_fff');
+		   	  	  	$('.go').fadeIn(1000);
+		   	  	  }else{
+		   	  	  	$('header').removeClass('bg_fff');
+		   	  	  	$('.go').fadeOut(300);
+		   	  	  }
+		    });
+	});
+	$('.go').on('click',function(){
+			$('.g-scrollview').animate({'scrollTop':0},1000);
+	});
+	
+	function AutoScroll(obj) {
+	    $(obj).find("ul:first").animate({
+	        marginTop: "-40px"
+	    },
+	    500,
+		function() {
+		        $(this).css({
+		            marginTop: "0px"
+		        }).find("li:first").appendTo(this);
+		});
+	}
+	$(document).ready(function() {
+	    setInterval('AutoScroll("#demo")', 3000)
+	});
+	!function () {
+        $('.m-list').find('img').lazyLoad({binder: '.g-scrollview'});
+    }();
+
+    $(function () {  
+	     $('#btnShow').click(function (event) {  
+	         //取消事件冒泡  
+	         event.stopPropagation();  
+	         //按钮的toggle,如果div是可见的,点击按钮切换为隐藏的;如果是隐藏的,切换为可见的。  
+	         $('.net_on').toggle();  
+			 return false;
+	     });  
+	     //点击空白处隐藏弹出层，下面为滑动消失效果和淡出消失效果。
+		 $(document).click(function(event){
+			  var _con = $('.net_on');   // 设置目标区域
+			  if(!_con.is(event.target) && _con.has(event.target).length === 0){ // Mark 1
+				//$('#divTop').slideUp('slow');   //滑动消失
+				$('.net_on').hide();          //淡出消失
+			  }
+		});
+ 	});
+ 	  
+</script>
+
+</body>
+</html>

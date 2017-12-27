@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="author" content="why, why.0505@163.com"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/demo_css.css" />
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+</head>
+<style>
+	.tab-nav{position: fixed; width: 100%; top:0.9rem; z-index: 99;}
+	.tab-nav-item{line-height: 0.9rem;}
+	.tab-panel{ background: none; padding-top: 1.8rem;}
+	.tab-panel .tab-panel-item{ padding: 0; background: none;}
+</style>
+<body>
+    <header class="m-navbar navbar-fixed">
+	        <a href="javascript:history.go(-1)" class="navbar-item"><i class="back-ico"></i></a>
+	        <div class="navbar-center"><span class="navbar-title">我的关注</span></div>
+	        <!--<div class="navbar-item padd_10">编辑</div>-->
+	   </header>
+
+<div class="g-scrollview m-tab" data-ydui-tab>
+            <ul class="tab-nav border-b">
+                <li class="tab-nav-item tab-active"><a href="javascript:;">商品</a></li>
+                <li class="tab-nav-item"><a href="javascript:;">店铺</a></li>
+            </ul>
+            <div class="tab-panel">
+                <div class="tab-panel-item tab-active">
+						<ul class="main list_02">
+							<li class="main-5 bg_fff">
+								<a href="shop_pr_viw.html"><div class="img m-list"><img src="images/none_w.jpg" data-url="images/mig.png"></div>	</a>
+								<div class="today_text">
+									<a href="shop_pr_viw.html"><h2>皮尔卡丹正品皮带男士商务自动扣真皮正装腰带休闲皮正装腰带休闲皮正装腰带休闲</h2></a>
+									<p class="main-30"><font class="p_size16 hong">32.3</font><a href="javascript:;" class="btn btn-hollow float_r">取消关注</a></p></div>
+							</li>
+							<li class="main-5 bg_fff">
+								<a href="shop_pr_viw.html"><div class="img m-list"><img src="images/none_w.jpg" data-url="images/mig.png"></div>	</a>
+								<div class="today_text">
+									<a href="shop_pr_viw.html"><h2>皮尔卡丹正品皮带男士商务自动扣真皮正装腰带休闲皮正装腰带休闲皮正装腰带休闲</h2></a>
+									<p class="main-30"><font class="p_size16 hong">32.3</font><a href="javascript:;" class="btn btn-hollow float_r">取消关注</a></p></div>
+							</li>
+						</ul>
+                </div>
+                
+                <div class="tab-panel-item">
+                	<div class="shop-text" style="padding: 0;">
+	                	<div class="main padd_a bg_fff main-5 ">
+							<a href="shop_bus.html" class="main al_l"><div class="logo-img m-list"><img src="images/none.jpg" data-url="images/main_05.jpg"/></div>
+							<div class="title"><p><b class="hei">ONLY官方旗舰店</b></p><p>做最美的自己,就选swisse</p></div><i class="pos_a cell-arrow" style="top:10px; right:10px"></i></a>
+						</div>
+						<div class="main padd_a bg_fff main-5 ">
+							<a href="shop_bus.html" class="main al_l"><div class="logo-img m-list"><img src="images/none.jpg" data-url="images/main_05.jpg"/></div>
+							<div class="title"><p><b class="hei">ONLY官方旗舰店</b></p><p>做最美的自己,就选swisse</p></div><i class="pos_a cell-arrow" style="top:10px; right:10px"></i></a>
+						</div>
+					</div>
+					
+                </div>
+            </div>
+
+
+        
+
+</div>
+<script src="js/ydui.js"></script>
+<script>
+$(function () {  
+     $('#btnShow').click(function (event) {  
+         //取消事件冒泡  
+         event.stopPropagation();  
+         //按钮的toggle,如果div是可见的,点击按钮切换为隐藏的;如果是隐藏的,切换为可见的。  
+         $('.net_on').toggle();  
+		 return false;
+     });  
+     //点击空白处隐藏弹出层，下面为滑动消失效果和淡出消失效果。
+	 $(document).click(function(event){
+		  var _con = $('.net_on');   // 设置目标区域
+		  if(!_con.is(event.target) && _con.has(event.target).length === 0){ // Mark 1
+			//$('#divTop').slideUp('slow');   //滑动消失
+			$('.net_on').hide();          //淡出消失
+		  }
+	});
+	
+ });  
+//	function net_on(){
+//		$(".net_on").toggle();
+//		$(this).parent().parent().siblings().find(".net_on").hide();
+//	};
+	!function () {
+        $('.m-list').find('img').lazyLoad({binder: '.g-scrollview'});
+    }();
+    
+	!function (win, $) {
+        var dialog = win.YDUI.dialog;
+        /* 正确提示框 */
+        $('#J_ToastS').on('click', function () {
+            dialog.toast('收货成功！', 'success', 1000);
+            setTimeout('window.location = "ok_rec.html"', 1000);
+
+        });
+    }(window, jQuery);   
+    !function (win, $) {
+        var dialog = win.YDUI.dialog;
+        /* 正确提示框 */
+        $('#J_delete').on('click', function () {
+            dialog.toast('删除成功！', 'success', 1000);
+
+        });
+    }(window, jQuery);  
+</script>
+</body>
+</html>

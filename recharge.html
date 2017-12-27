@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/demo.css"/>
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/demo_css.css" />
+	</head>
+	<body class="bg_fff">
+		<header class="m-navbar navbar-fixed">
+			<a href="javascript:history.go(-1)" class="navbar-item"><i class="back-ico"></i></a>
+	    	<div class="navbar-center"><span class="navbar-title">油卡充值</span></div>
+	 </header>
+		<div class="content">
+			<div class="main padd_10" style="background: #ddfcf7;">
+				<p class="hui l_hei30 al_l">当前充值较多，到账稍慢，请耐心等待</p>
+			</div>
+			<div class="main">
+				<ul class="list_01 border-b">
+					<li><select class="cell-select" id="mySelect" style="width: 90%;">
+						<option>选择加油卡</option>
+						<option>+</option>
+						<option>中国石化（**230）</option>
+						<option>中国石油（**230）</option>
+						</select><font class="float_r"><i class="fa fa-angle-right fa-2x pos_a" style="top:10px; right:10px;"></i></font></li>
+				</ul>
+			</div>
+			<div class="main padd_10">
+				<p class="hui padd_e10 al_l p_size12">不支持中石油BP卡、司机卡、过期卡、不记名卡以及非直营加油站办理的加油卡</p>
+			</div>
+			<div class="main">
+				<ul class="redh_ge">
+					<li class="p_size12"><a href="#"><p>中国石化,中国石油</p><p><b class="p_size20">100.0元</b></p><p>售价:99.5元</p></a></li>
+					<li class="p_size12"><a href="#"><p>中国石化</p><p><b class="p_size20">200.0元</b></p><p>售价:199.0元</p></a></li>
+					<li class="p_size12"><a href="#"><p>中国石化</p><p><b class="p_size20">500.0元</b></p><p>售价:497.5元</p></a></li>
+					<li class="p_size12"><a href="#"><p>中国石化</p><p><b class="p_size20">1000.0元</b></p><p>售价:995.0元</p></a></li>
+				</ul>
+			</div>
+			<div class="main padd_10">
+				<p class="hui padd_e10 al_l border-t"><label><input type="checkbox" checked="" style="width: 18px; height: 18px; vertical-align: middle;" /> 我同意<a href="recharge.html" class="lan">《爱油游够买协议》</a></label></p>
+			</div>
+			<div class="main main-10 padd_10"><button type="button" class="btn-block btn-warning" id="J_OpenKeyBoard" >立即购买</button></div>
+		</div>
+		<div class="zf_jp">
+			<div class="zf_c1 animated bounceInUp">
+				<h1 class="al_l padd_10">账户余额<a class="close-reveal-modal float_r p_size20 hui">&#215;</a></h1>
+				<p class="al_l padd_30 main-20"><b class="p_size20">0.00</b></p>
+				<div class="main none">
+					<p class="al_l p_size15 hei padd_30 main-30">请输入支付密码</p>
+					<div class="zf_pass main-10">
+							<input type="password"  maxlength="1" value="">
+							<input type="password"  maxlength="1" value="">
+							<input type="password"  maxlength="1" value="">
+							<input type="password"  maxlength="1" value="">
+							<input type="password"  maxlength="1" value="">
+							<input type="password"  maxlength="1" value="">
+					</div>
+				</div>
+				
+				
+				<div class="main main-10 padd_a"><button type="button" class="btn-block btn-warning">快去借贷吧</button><!--禁止点击类名int_c02  属性readonly--></div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){ 
+			$('#mySelect').change(function(){ 
+			$(this).children('option:selected').val(); 
+				window.location.href="add_rech.html";//页面跳转并传参 
+			}) 
+		}) 
+			$(document).ready(function(){
+				  $("button").click(function(){
+				  $(".zf_jp").toggle();
+				  });
+			});
+			$(document).ready(function(){
+				  $(".close-reveal-modal").click(function(){
+				  $(".zf_jp").toggle();
+				  });
+			});
+			
+			//判断输入的密码还是否为数字  
+			$('.zf_pass input').on("input propertychange",function(){  
+			    var _this = $(this);  
+			    inputFun(_this);  
+			});    
+			//监听backspace事件  
+			$('.zf_pass input').on("keyup",function(e){  
+			    var _this = $(this);  
+			    var ev = e;  
+			    keyupFun(_this,ev);  
+			});   
+			//判断输入的密码还是否为数字  
+			function inputFun(value){  
+			    var reg = new RegExp("^[0-9]*$");  
+			    var val = value.val();  
+			    if(!reg.test(val)){  
+			        value.val('')  
+			    }else{  
+			        value.next().focus();  
+			    }  
+			}  
+			//监听backspace事件  
+			function keyupFun(value,e){  
+			    var k = e.keyCode;  
+			    var val = e.key;  
+			    if(k == 8){             //8是backspace的keyCode  
+			        value.prev().focus();  
+			    }else{  
+			        return false;  
+			    }  
+			};
+			
+			
+		</script>
+	</body>
+</html>

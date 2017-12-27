@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/demo.css"/>
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/demo_css.css" />
+	</head>
+	<body>
+		<header class="m-navbar navbar-fixed">
+			<a href="javascript:history.go(-1)" class="navbar-item"><i class="back-ico"></i></a>
+	    	<div class="navbar-center"><span class="navbar-title">确认订单</span></div>
+	 </header>
+		<div class="content">
+			<div class="main m-cell main-10">
+			    <div class="cell-item">
+			        <div class="cell-left">收&nbsp;&nbsp;货&nbsp;&nbsp;人：</div>
+			        <div class="cell-right"><input type="text" class="cell-input" placeholder="请输入收货人真实姓名" autocomplete="off" /></div>
+			    </div>
+			    <div class="cell-item">
+			        <div class="cell-left">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：</div>
+			        <div class="cell-right"><input type="number" pattern="[0-9]*" class="cell-input" placeholder="请输入收货人手机号" autocomplete="off" /></div>
+			    </div>
+			    <div class="cell-item">
+			        <div class="cell-left">所在地区：</div>
+			        <div class="cell-right cell-arrow">
+                    	<input type="text" class="cell-input" readonly="" id="J_Address2" value="新疆 乌鲁木齐市 天山区" placeholder="所在地区">
+                	</div>
+			    </div>
+			    <div class="cell-item">
+			        <div class="cell-left">详细地址：</div>
+			        <div class="cell-right"><input type="text" class="cell-input" placeholder="请输入详细地址" autocomplete="off" /></div>
+			    </div>
+			</div>
+			
+			<div class="main main-10">
+				<ul class="list_02 bg_fff padd_20">
+					<li class="border-t">
+						<a class="img"><img src="images/mig.png"></a>
+						<div class="today_text">
+							<h2>世城时尚快捷宾馆</h2>
+							<p class="main-10"><font class="p_size12">￥</font><font class="p_size16 hong">32.3</font><s class="hui p_size12 padd_10">￥88.2</s><font class="float_r">×2</font></p></div>	
+					</li>
+				</ul>
+		</div>
+		<div class="main m-cell main-10">
+			    <div class="cell-item">
+			        <div class="cell-left">预约数量：</div>
+			        <div class="cell-right">
+			        	<span class="m-spinner" data-ydui-spinner="{input: '.J_Input', add: '.J_Add', minus: '.J_Del'}">
+			                <a href="javascript:;" class="J_Del"></a>
+			                <input type="text" class="J_Input" placeholder=""/>
+			                <a href="javascript:;" class="J_Add"></a>
+			            </span>
+			        </div>
+			    </div>
+			    <div class="main padd_a">
+			    	<p class="al_c p_size18 l_hei30">应付金额: <font class="hong"><b class="p_size20">64.6</b>元</font></p>
+			    	<p class="al_c hui l_hei30">剩余花有:3214.2元</p>
+			    </div>
+			</div>
+
+			<div class="main padd_a"><button type="button" class="btn-block btn-warning" id="J_OpenKeyBoard" >立即订购</button></div>
+		</div>
+		<div class="m-keyboard" id="J_KeyBoard">
+            <!-- 自定义内容区域 -->
+            <div style="text-align: right;padding: .15rem .8rem 0;"><a href="http://www.ydui.org" style="color: #666;font-size: .24rem;">忘记密码</a></div>
+            <!-- 自定义内容区域 -->
+        </div>
+	<!--密码输入-->	
+		<!--<div class="zf_jp">
+			<div class="zf_c1 animated bounceInUp">
+				<h1><a class="close-reveal-modal float_l padd_10">&#215;</a>请输入支付密码</h1>
+				<div class="zf_pass main-30">
+						<input type="password"  maxlength="1" value="">
+						<input type="password"  maxlength="1" value="">
+						<input type="password"  maxlength="1" value="">
+						<input type="password"  maxlength="1" value="">
+						<input type="password"  maxlength="1" value="">
+						<input type="password"  maxlength="1" value="">
+				</div>
+				
+			</div>
+		</div>-->
+		
+		<script src="js/source/ydui.citys.js"></script>
+		<script src="js/ydui.js"></script>
+<script>
+	!function () {
+        var $target = $('#J_Address2');
+
+        $target.citySelect({
+            provance: '新疆',
+            city: '乌鲁木齐市',
+            area: '天山区'
+        });
+
+        $target.on('click', function (event) {
+            event.stopPropagation();
+            $target.citySelect('open');
+        });
+
+        $target.on('done.ydui.cityselect', function (ret) {
+            $(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+        });
+    }();
+    !function ($, ydui) {
+
+        var dialog = ydui.dialog;
+
+        var $keyboard = $('#J_KeyBoard');
+
+        // 初始化参数
+        $keyboard.keyBoard({
+            disorder: false, // 是否打乱数字顺序
+            title: 'YDUI安全键盘' // 显示标题
+        });
+
+        // 打开键盘
+        $('#J_OpenKeyBoard').on('click', function () {
+            $keyboard.keyBoard('open');
+        });
+
+        // 六位密码输入完毕后执行
+        $keyboard.on('done.ydui.keyboard', function (ret) {
+
+            console.log('输入的密码是：' + ret.password);
+
+            // 弹出请求中提示框
+            dialog.loading.open('验证支付密码');
+
+            // 模拟AJAX校验密码
+            setTimeout(function () {
+                // 关闭请求中提示框
+                dialog.loading.close();
+
+                // 显示错误信息
+                $keyboard.keyBoard('error', '对不起，您的支付密码不正确，请重新输入。');
+            }, 1500);
+
+            // 关闭键盘
+            // $keyboard.keyBoard('close');
+        });
+
+    }(jQuery, YDUI);
+</script>
+
+		
+	</body>
+</html>

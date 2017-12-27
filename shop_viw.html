@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="author" content="why, why.0505@163.com"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="js/touchTouch/touchTouch.css">
+    <link rel="stylesheet" href="css/demo_css.css" />
+    
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/touchTouch/touchTouch.jquery.js"></script>
+		<script>
+		$(function(){
+			$('.thumbs a').touchTouch();
+		});
+		</script> 
+	</head>
+	<body>
+		<header class="m-navbar navbar-fixed">
+	        <a href="javascript:history.go(-1)" class="navbar-item"><i class="back-ico"></i></a>
+	    	<div class="navbar-center"><span class="navbar-title">店铺详情</span></div>
+	        <div class="navbar-item padd_10"></div>
+	    </header>
+	    <div class="g-scrollview" style="padding-top: 0.9rem;">
+		    <div class="main  bg_fff" style="border-bottom: none;">
+		    	<div class="uesr_logo" style="margin-top: 10px;"><img src="images/main_01.jpg"></div>
+		    	<div class="uesr_name"><font class=" p_s_3rem hei">Swisse 旗舰店</font></div>
+				<div class="uesr_name"><font class=" p_s_1rem hui">开店时间:2015年05月25日</font></div>
+		    	<div class="main shop-v1 m-grids-3 bor-n">
+				    <a href="#" class="grids-item">
+				        <div class="grids-txt"><span><font>26581</font><br><font class="hui p_s_2rem">关注数</font></span></div>
+				    </a>
+				    <a href="#" class="grids-item">
+				        <div class="grids-txt"><span><font>2561455</font><br><font class="hui p_s_2rem">累计销量</font></span></div>
+				    </a>
+				    <a href="#" class="grids-item">
+				        <div class="grids-txt"><span><font>186</font><br><font class="hui p_s_2rem">商品数量</font></span></div>
+				    </a>
+				</div>
+		    </div>
+		    <div class="main">
+				<div class="main main-5 m-cell bor-n">
+					<div class="cell-item bor-n">
+					    <div class="cell-left">店铺星级<font class="padd_10 p_s_4rem"><i class="icon-star hong"></i><i class="icon-star hong"></i><i class="icon-star hong"></i><i class="icon-star hong"></i><i class="icon-star hong"></i></font></div>
+					    <div class="cell-right"></div>
+					</div>
+				</div>
+			</div>
+    		
+    		<div class="main main-5">
+				<div class="main m-cell bor-n">
+					<div class="cell-item bor-n">
+					    <div class="cell-left">描述相符<font class="padd_10 lv">4.5  低于同行2.37%</font></div>
+					    <div class="cell-right"></div>
+					</div>
+					<div class="cell-item bor-n">
+					    <div class="cell-left">物流服务<font class="padd_10 lv">4.5  低于同行2.37%</font></div>
+					    <div class="cell-right"></div>
+					</div>
+					<div class="cell-item bor-n">
+					    <div class="cell-left">服务态度<font class="padd_10 hong">4.8  高于同行0.37%</font></div>
+					    <div class="cell-right"></div>
+					</div>
+				</div>
+			</div>
+			<div class="main main-5">
+				<div class="main m-cell bor-n">
+					<div class="cell-item bor-n">
+					    <div class="cell-left">店铺名称<font class="padd_10 hui_s">Swisse 旗舰店</font></div>
+					    <div class="cell-right"><i class="kefu_h"></i></div>
+					</div>
+					<div class="cell-item bor-n">
+					    <div class="cell-left">联系电话<font class="padd_10 hui_s">04561-9215-589</font></div>
+					    <div class="cell-right"><i class="icon-phone2 p_s_4rem"></i></div>
+					</div>
+					<div class="cell-item bor-n">
+					    <div class="cell-left">店铺地址<font class="padd_10 hui_s">福建省厦门市延寿街452号</font></div>
+					    <div class="cell-right"></div>
+					</div>
+				</div>
+			</div>
+		 		
+		</div>
+		
+<a href="javascript:;" class="go"><img src="images/hui_dingbu.png"><br>顶部</a>
+<script src="js/ydui.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/nav.js"></script>
+<script>
+	 var swiper = new Swiper('.shop_bus', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+	$(function(){
+			$('.g-scrollview').scroll(function(){
+		          height = $('.g-scrollview').scrollTop();
+		   	  	  if(height > 150){
+		   	  	  	$('.go').fadeIn(1000);
+		   	  	  }else{
+		   	  	  	$('.go').fadeOut(300);
+		   	  	  }
+		    });
+		});
+		$('.go').on('click',function(){
+			$('.g-scrollview').animate({'scrollTop':0},1000);
+		});
+	
+	!function () {
+        $('.m-list').find('img').lazyLoad({binder: '#sh-img'});
+    }();
+
+</script>
+
+
+
+	</body>
+</html>

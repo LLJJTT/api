@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/demo.css"/>
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/demo_css.css" />
+	</head>
+	<body>
+		<header class="m-navbar navbar-fixed">
+			<a href="javascript:history.go(-1)" class="navbar-item"><i class="back-ico"></i></a>
+	    	<div class="navbar-center al_l"><span class="navbar-title">加油卡管理</span></div>
+	    	<a href="add_rech.html" class="navbar-item padd_10">添加</a>
+	 </header>
+		<div class="content">
+			<div class="main padd_10" style="border-top: 10px solid #f2f2f2;">
+				<ul class="bank_list">
+					<li class="bg_huang bg_sy">
+						<div class="img"><img src="images/sy_logo.png"></div>
+					<div class="title_text">
+						<a href="#" class="delete" id="J_Confirm">X</a>
+						<a href="jy_list.html"><h2 class="bai">中国石油</h2>
+						<p class="p_size14 l_hei30 bai">持卡人姓名<font class="padd_10">123****1234</font><i class="fa fa-angle-right fa-2x float_r main-15"></i></p>
+						<p class="p_size20 bai l_hei30 main-10">23**&nbsp;****&nbsp;****&nbsp;3543</p></a>
+					</div>
+					</li>
+					<li class="bg_huang bg_sh">
+						<div class="img"><img src="images/sh_logo.png"></div>
+					<div class="title_text">
+						<a href="#" class="delete" id="J_Confirm">X</a>
+						<a href="jy_list.html"><h2 class="bai">中国石油</h2>
+						<p class="p_size14 l_hei30 bai">持卡人姓名<font class="padd_10">123****1234</font><i class="fa fa-angle-right fa-2x float_r main-15"></i></p>
+						<p class="p_size20 bai l_hei30 main-10">23**&nbsp;****&nbsp;****&nbsp;3543</p></a>
+					</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="js/ydui.js"></script>
+		<script>
+    !function (win, $) {
+        var dialog = win.YDUI.dialog;
+
+        /* 普通确认框 */
+        $('#J_Confirm').on('click', function () {
+            dialog.confirm('', '解除加油卡后服务将不可用，确定解除绑定吗？', function () {
+                dialog.toast('你点了确定', 'none', 1000);
+            });
+        });
+
+        /* 自定义按钮确认框 */
+        $('#J_ConfirmCustom').on('click', function () {
+            dialog.confirm('自定义按钮', '我有一个小毛驴我从来也不骑！', [
+                {
+                    txt: '取消',
+                    color: false, /* false:黑色  true:绿色 或 使用颜色值 */
+                    callback: function () {
+                        dialog.toast('你点了取消', 'none', 1000);
+                    }
+                },
+                {
+                    txt: '犹豫一下',
+                    stay: true, /* 是否保留提示框 */
+                    color: '#CCC', /* 使用颜色值 */
+                    callback: function () {
+                        dialog.toast('别犹豫了', 'none', 1000);
+                    }
+                },
+                {
+                    txt: '确定',
+                    color: true,
+                    callback: function () {
+                        dialog.toast('你点了确定', 'none', 1000);
+                    }
+                }
+            ]);
+        });
+
+        /* 普通提示框*/
+        $('#J_Alert').on('click', function () {
+            dialog.alert('消息一出，休想滚动屏幕【移动终端】！');
+        });
+
+        /* 正确提示框 */
+        $('#J_ToastS').on('click', function () {
+            dialog.toast('鼠标不错哟！', 'success', 1000);
+        });
+
+        /* 错误提示框 */
+        $('#J_ToastE').on('click', function () {
+            dialog.toast('别乱点啊！', 'error', 1000, function () {
+                dialog.alert('给你一次重来的机会！');
+            });
+        });
+
+        /* 不带图标提示框 */
+        $('#J_ToastN').on('click', function () {
+            dialog.toast('一个没有任何图标的提示！', 'none', 1000);
+        });
+
+        /* 加载中提示框 */
+        $('#J_Loading').on('click', function () {
+            dialog.loading.open('很快加载好了');
+            setTimeout(function () {
+                dialog.loading.close();/* 移除loading */
+            }, 2000);
+        });
+
+        /* 顶部提示框 */
+        $('#J_Notify').on('click', function () {
+            dialog.notify('5秒后自动消失，点我也可以消失！', 5000, function(){
+                console.log('我走咯！');
+            });
+        });
+    }(window, jQuery);
+</script>
+	</body>
+</html>

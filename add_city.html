@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/ydui.css?rev=@@hash"/>
+    <!--<link rel="stylesheet" href="css/demo.css"/>-->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/demo_css.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/ydui.flexible.js"></script>
+</head>
+	<body>
+		<header class="m-navbar navbar-fixed">
+			<a href="javascript:history.go(-1)" class="navbar-item"><i class="back-ico"></i></a>
+	    	<div class="navbar-center"><span class="navbar-title">添加地址</span></div>
+	    	<a href="#" class="navbar-item padd_10"><font class="p_size16 ">保存</font></a>
+   		</header>
+   		<div class="g-scrollview" style="padding: 1rem 0px 0rem;">
+   			<div class="main main-10">
+				<div class="m-cell">
+					<div class="cell-item">
+				        <div class="cell-left">收货人&nbsp;&nbsp;</div>
+				        <div class="cell-right"><input type="text" class="cell-input" autocomplete="off" /></div>
+				    </div>
+		            <div class="cell-item">
+				        <div class="cell-left">联系电话&nbsp;&nbsp;</div>
+				        <div class="cell-right"><input type="text" class="cell-input" autocomplete="off" /></div>
+				    </div>
+				    <div class="cell-item">
+				        <div class="cell-left">所在地区</div>
+				        <div class="cell-right cell-arrow"><input type="text" class="cell-input al_r" readonly id="J_Address" placeholder="请选择"></div>
+				    </div>
+				    <a href="street.html" class="cell-item">
+				        <div class="cell-left">街道</div>
+				        <div class="cell-right cell-arrow hui">请选择</div>
+				    </a>
+				    <div class="m-cell">
+					    <div class="cell-item">
+					        <div class="cell-right">
+					            <textarea class="cell-textarea" placeholder="请填写详细地址"></textarea>
+					        </div>
+					    </div>
+					</div>
+		        </div>
+			</div>
+   		</div>
+   		<script src="js/source/ydui.citys.js"></script>
+<script src="js/ydui.js"></script>
+<script>
+    /**
+     * 默认调用
+     */
+    !function () {
+        var $target = $('#J_Address');
+
+        $target.citySelect();
+
+        $target.on('click', function (event) {
+            event.stopPropagation();
+            $target.citySelect('open');
+        });
+
+        $target.on('done.ydui.cityselect', function (ret) {
+            $(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+        });
+    }();
+    /**
+     * 设置默认值
+     */
+    !function () {
+        var $target = $('#J_Address2');
+
+        $target.citySelect({
+            provance: '新疆',
+            city: '乌鲁木齐市',
+            area: '天山区'
+        });
+
+        $target.on('click', function (event) {
+            event.stopPropagation();
+            $target.citySelect('open');
+        });
+
+        $target.on('done.ydui.cityselect', function (ret) {
+            $(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+        });
+    }();
+</script>
+	</body>
+</html>

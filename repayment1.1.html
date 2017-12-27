@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/demo.css"/>
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/demo_css.css" />
+	</head>
+	<body>
+		<header class="m-navbar navbar-fixed">
+			<a href="javascript:history.go(-1)" class="navbar-item"><i class="back-ico"></i></a>
+	    	<div class="navbar-center"><span class="navbar-title" style="text-align: left;">还款</span></div>
+	 </header>
+	 <div class="content">
+	 	
+			<div class="mian padd_10 bg_fff border-t">
+				<p class="padd_e10 main-10 hui">剩余待还(元)</p>
+				<p class="p_size24"><b>3,229.35</b></p>
+				<p class="padd_e10 hui">账单日<font class="huang">2017-09-05</font></p>
+			</div>
+			<div class="main bg_fff">
+					<ul class="cen_list_02 padd_0">
+			            <li style="border: none;"><p class="p_size13 l_hei30 hui">账单金额</p><p class="p_size16"><b>3,229.35</b></p></li>
+			            <li style="border: none;"><p class="p_size13 l_hei30 hui">当前已还</p><p class="p_size20"><b>0<span class="p_size12">.00</span></b></p></li>
+			        </ul>
+			</div>
+			<div class="main al_l padd_a"><b>账单明细</b></div>
+			<div class="main bg_fff" >
+				<ul class="recd_list_02">
+					<li>
+						<p><font>中国石油-加油卡套餐(200.00元)</font><b class="p_size14 float_r">-98.00</b></p>
+						<p><span class="p_size12 hui">2017-07-11</span></p>
+					</li>
+					<li>
+						<p><font>充值</font><b class="p_size14 float_r">-98.00</b></p>
+						<p><span class="p_size12 hui">2017-07-11</span></p>
+					</li>
+					<li>
+						<p><font>中国石油-加油卡套餐(200.00元)</font><b class="p_size14 float_r">-98.00</b></p>
+						<p><span class="p_size12 hui">2017-07-11</span></p>
+					</li>
+					<li>
+						<p><font>充值</font><b class="p_size14 float_r">-98.00</b></p>
+						<p><span class="p_size12 hui">2017-07-11</span></p>
+					</li>
+					<li>
+						<p><font>中国石油-加油卡套餐(200.00元)</font><b class="p_size14 float_r">-98.00</b></p>
+						<p><span class="p_size12 hui">2017-07-11</span></p>
+					</li>
+					<li>
+						<p><font>充值</font><b class="p_size14 float_r">-98.00</b></p>
+						<p><span class="p_size12 hui">2017-07-11</span></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="main pos_f padd_a bg_f0f0f0" style="bottom:0px"><button type="button" class="btn-block btn-warning" >提前还款</button><!--禁止点击类名int_c02  属性readonly--></div>
+		<div class="zf_jp">
+			<div class="zf_c1 animated bounceInUp">
+				<h1>还款<a class="close-reveal-modal float_r p_size20 hui padd_10">&#215;</a></h1>
+				<ul class="user_ul" style="padding: 20px 20px;">
+					<li><font class="inp_tl p_size20">￥</font><input type="number" value="332.95" class="inp_tr v_k1" style="padding-left: 20px; border: none; border-bottom:1px solid #f0f0f0; height: 40px; font-size:18px;" placeholder="请输入还款金额"><span class="pos_a p_size20 hui padd_a v_k" style="margin-left: -40px;">&#215;</span></li>
+				</ul>
+				<div class="main padd_a main-60"><input type="button" onclick="javascript:window.location.href='rep_bank.html'" value="支付332.95" class="btn-block btn-warning" ></div>
+			</div>
+		</div>
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				  $("button").click(function(){
+				  $(".zf_jp").toggle();
+				  });
+			});
+			$(document).ready(function(){
+				  $(".close-reveal-modal").click(function(){
+				  $(".zf_jp").toggle();
+				  });
+			});
+			$(document).ready(function(){
+				  $(".v_k").click(function(){
+				  $(".v_k1").val(" ");
+				  });
+			});
+		</script>
+	</body>
+</html>

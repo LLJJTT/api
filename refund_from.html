@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>爱油游</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="author" content="why, why.0505@163.com"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/ydui.css"/>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/demo_css.css" />
+    
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+	</head>
+	<body>
+		<header class="m-navbar navbar-fixed">
+			<a href="javascript:history.go(-1)" class="navbar-item"><i class="back-ico"></i></a>
+	    	<div class="navbar-center"><span class="navbar-title">申请退款</span></div>
+	    	<div class="navbar-item padd_10">
+	        	<img src="images/....png" width="20" id="btnShow" />
+		    	<div class="net_on">
+					<a href="javascript:;"><i class="i-news"></i>消息</a>
+					<a href="shop.html"><i class="i-home"></i>商城首页</a>
+					<a href="javascript:;"><i class="i-fk"></i>我要反馈</a>
+					<a href="javascript:;"><i class="i_fx"></i>我要分享</a>
+				</div>
+		    </div>
+	 </header>
+		<div class="g-scrollview" style="padding: 0.9rem 0 0rem;">
+			<div class="main m-cell bor-n">
+			    <a href="javascript:;" data-ydui-actionsheet="{target:'.actionSc',closeElement:'.cancel'}" class="cell-item">
+			        <div class="cell-left">退款类型</div>
+			        <div class="cell-right cell-arrow padd_10"><div class="main al_l p_s_3rem">我要退货退款</div></div>
+			    </a>
+			    <a href="javascript:;" data-ydui-actionsheet="{target:'.actionSd',closeElement:'.cancel'}" class="cell-item">
+			        <div class="cell-left">退款原因</div>
+			        <div class="cell-right cell-arrow padd_10"><div class="main al_l p_s_3rem">点击选择退款原因</div></div>
+			    </a>
+			    <div class="cell-item">
+			        <div class="cell-left">退款金额</div>
+			        <div class="cell-right padd_10 hui">
+                    	<input type="number" class="cell-input hong p_s_4rem" value="89.2" >最多￥89.2
+                	</div>
+			    </div>
+			    <div class="cell-item bor-n">
+			        <div class="cell-left">退款说明</div>
+			        <div class="cell-right padd_10"></div>
+			    </div>
+			    <div class="cell-item">
+			        <div class="cell-right">
+			            <textarea class="cell-textarea" placeholder="亲！请您详细填写退款说明。（最多150字）"></textarea>
+			        </div>
+			    </div>
+			</div>
+			
+	
+		
+<div class="m-actionsheet actionSc bg_fff">
+	<div class="m-navbar">
+	    <div class="navbar-center">退款类型</div>
+	</div>
+    <div class="shop-cs">
+    	<div class="main m-cell border-b">
+	    	<label class="cell-item">
+		        <span class="cell-left">我要退货退款</span>
+		        <label class="cell-right">
+		            <input type="radio" name="radio" checked="checked" />
+		            <i class="cell-checkbox-icon"></i>
+		        </label>
+		    </label>
+		    <label class="cell-item">
+		        <span class="cell-left">我要退款（无需退货）</span>
+		        <label class="cell-right">
+		            <input type="radio" name="radio"/>
+		            <i class="cell-checkbox-icon"></i>
+		        </label>
+		    </label>
+		</div>
+    </div>
+    <a href="javascript:;" class="cancel btn-block bg_lan_s bai p_size18">关闭</a>
+</div>
+<div class="m-actionsheet actionSd bg_fff">
+	<div class="m-navbar">
+	    <div class="navbar-center">退款原因</div>
+	</div>
+    <div class="shop-cs">
+    	<div class="main m-cell border-b">
+	    	<label class="cell-item">
+		        <span class="cell-left">7天无理由退换货</span>
+		        <div class="cell-right">
+		            <input type="radio" name="tho" checked="checked" />
+		            <i class="cell-checkbox-icon"></i>
+		        </div>
+		    </label>
+		    <label class="cell-item">
+		        <span class="cell-left">推运费</span>
+		        <div class="cell-right">
+		            <input type="radio" name="tho"/>
+		            <i class="cell-checkbox-icon"></i>
+		        </div>
+		    </label>
+		    <label class="cell-item">
+		        <span class="cell-left">大小/尺寸与商品描述不符</span>
+		        <div class="cell-right">
+		            <input type="radio" name="tho"/>
+		            <i class="cell-checkbox-icon"></i>
+		        </div>
+		    </label>
+		    <label class="cell-item">
+		        <span class="cell-left">颜色/图案/款式与商品描述不符</span>
+		        <div class="cell-right">
+		            <input type="radio" name="tho"/>
+		            <i class="cell-checkbox-icon"></i>
+		        </div>
+		    </label>
+		    <label class="cell-item">
+		        <span class="cell-left">材质与商品描述不符</span>
+		        <div class="cell-right">
+		            <input type="radio" name="tho"/>
+		            <i class="cell-checkbox-icon"></i>
+		        </div>
+		    </label>
+		    <label class="cell-item">
+		        <span class="cell-left">做工粗糙/有瑕疵</span>
+		        <div class="cell-right">
+		            <input type="radio" name="tho"/>
+		            <i class="cell-checkbox-icon"></i>
+		        </div>
+		    </label>
+		    <label class="cell-item">
+		        <span class="cell-left">质量问题</span>
+		        <div class="cell-right">
+		            <input type="radio" name="tho"/>
+		            <i class="cell-checkbox-icon"></i>
+		        </div>
+		    </label>
+		    <label class="cell-item">
+		        <span class="cell-left">少件/漏发</span>
+		        <div class="cell-right">
+		            <input type="radio" name="tho"/>
+		            <i class="cell-checkbox-icon"></i>
+		        </div>
+		    </label>
+		    <label class="cell-item">
+		        <span class="cell-left">包装/商品破损/污渍/裂痕/变形</span>
+		        <div class="cell-right">
+		            <input type="radio" name="tho"/>
+		            <i class="cell-checkbox-icon"></i>
+		        </div>
+		    </label>
+		    <label class="cell-item">
+		        <span class="cell-left">假冒品牌</span>
+		        <div class="cell-right">
+		            <input type="radio" name="tho"/>
+		            <i class="cell-checkbox-icon"></i>
+		        </div>
+		    </label>
+		    <label class="cell-item">
+		        <span class="cell-left">未按约定时间发货</span>
+		        <div class="cell-right">
+		            <input type="radio" name="tho"/>
+		            <i class="cell-checkbox-icon"></i>
+		        </div>
+		    </label>
+		    <label class="cell-item">
+		        <span class="cell-left">发票问题</span>
+		        <div class="cell-right">
+		            <input type="radio" name="tho"/>
+		            <i class="cell-checkbox-icon"></i>
+		        </div>
+		    </label>
+		    <label class="cell-item">
+		        <span class="cell-left">卖家发错货</span>
+		        <div class="cell-right">
+		            <input type="radio" name="tho"/>
+		            <i class="cell-checkbox-icon"></i>
+		        </div>
+		    </label>
+		</div>
+		</div>
+    <a href="javascript:;" class="cancel btn-block bg_lan_s bai p_size18">关闭</a>
+
+		</div>
+	<footer class="m-tabbar tabbar-fixed shop-bot">
+		<a href="javascript:;" class="shop-bot2 main" id="J_ToastS">提交申请</a>
+	</footer>
+		</div>	
+        
+		<script src="js/ydui.js"></script>
+<script>
+   $(function () {  
+     $('#btnShow').click(function (event) {  
+         //取消事件冒泡  
+         event.stopPropagation();  
+         //按钮的toggle,如果div是可见的,点击按钮切换为隐藏的;如果是隐藏的,切换为可见的。  
+         $('.net_on').toggle();  
+		 return false;
+     });  
+     //点击空白处隐藏弹出层，下面为滑动消失效果和淡出消失效果。
+	 $(document).click(function(event){
+		  var _con = $('.net_on');   // 设置目标区域
+		  if(!_con.is(event.target) && _con.has(event.target).length === 0){ // Mark 1
+			//$('#divTop').slideUp('slow');   //滑动消失
+			$('.net_on').hide();          //淡出消失
+		  }
+	});
+	
+}); 
+    !function () {
+        $('.m-list').find('img').lazyLoad({binder: '.g-scrollview'});
+    }();
+    !function (win, $) {
+        var dialog = win.YDUI.dialog;
+        /* 正确提示框 */
+        $('#J_ToastS').on('click', function () {
+            dialog.toast('申请成功！', 'success', 1000);
+            setTimeout('window.location = "refund_viw1.html"', 1000);
+
+        });
+    }(window, jQuery);   
+</script>
+
+		
+	</body>
+</html>
